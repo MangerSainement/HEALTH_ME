@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<!-- google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+		<!-- favicon -->
+		<link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+		<!-- animate scss -->
+		<link rel="stylesheet" href="assets/css/animate.css">
+		<!-- bootstarp css -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<!-- icofont -->
+		<link rel="stylesheet" href="assets/css/icofont.min.css">
+		<!-- lightcase css -->
+		<link rel="stylesheet" href="assets/css/lightcase.css">
+		<!-- swiper css -->
+		<link rel="stylesheet" href="assets/css/swiper.min.css">
+		<!-- cusyom scss -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+		<title>Health Me!</title>
+	</head>
+
+	<body>
+
+        <!-- search area -->
+        <div class="search-area">
+            <div class="search-input">
+                <div class="search-close">
+                    <span></span>
+                    <span></span>
+                </div>
+                <form>
+                    <input type="text" name="text" placeholder="Recherche...">
+                </form>
+            </div>
+        </div>
+        <!-- search area -->
+
+		<!-- Mobile Menu Start Here -->
+		<div class="mobile-menu">
+			<nav class="mobile-header d-xl-none">
+				<div class="header-logo">
+					<a href="index.html" class="logo"><img src="assets/images/symptomes/logohealthme.jpeg" alt="logo"></a>
+				</div>
+				<div class="header-bar">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</nav>
+			<nav class="menu">
+				<div class="mobile-menu-area d-xl-none">
+					<div class="mobile-menu-area-inner" id="scrollbar">
+						<div class="mobile-search">
+							<input type="text" placeholder="Recherche...">
+							<button type="submit"><i class="icofont-search-2"></i></button>
+						</div>
+						<ul>
+							<li><a href="xx.html">Acceuil</a></li>
+              <li><a class="active">Symptômes</a></li>
+              <li><a href="xx.html">Aliments</a></li>
+							<li><a href="recette.html">Recettes</a></li>
+						</ul>
+						<div class="scocial-media">
+							<a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+							<a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+							<a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+							<a href="#" class="vimeo"><i class="icofont-vimeo"></i></a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!-- Mobile Menu Ending Here -->
+
+		<!-- header section start -->
+		<header class="header-section header-3 d-xl-block d-none">
+			<div class="container">
+                <div class="">
+                    <div class="header-top w-100">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/symptomes/logohealthme.jpeg" alt="logo"></a>
+                        </div>
+                        <div class="menu-search-form">
+                            <div class="widget-search">
+                                <form method="get">
+                                    <input type="text" placeholder="Recherche..." name="s">
+                                    <button type="submit"><i class="icofont-search-2"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-bottom w-100">
+                        <div class="main-menu">
+                            <ul>
+															<li><a href="xx.html">Acceuil</a></li>
+								              <li><a class="active">Symptômes</a></li>
+								              <li><a href="xx.html">Aliments</a></li>
+															<li><a href="recette.html">Recettes</a></li>
+														</ul>
+                        </div>
+												<div class="author-option">
+																	<div class="author-area">
+																			<div class="author-account">
+																					<div class="author-icon">
+																							<img src="assets/images/author/01.png" alt="author">
+																					</div>
+																							<div class="author-select">
+																									<select name="author-select" id="author-select">
+																											<option value="1">Mon compte </option>
+																											<option value="2">Se déconnecter </option>
+																									</select>
+																							</div>
+																			</div>
+																	</div>
+															</div>
+                    </div>
+
+                </div>
+			</div>
+		</header>
+
+		<!-- Booking Table Section Start Here -->
+		<section class="booking-table padding-tb">
+				<div class="container">
+						<div class="section-header">
+								<h2>As-tu des symptômes?</h2>
+								<h6>Si oui, veuillez répondre au questionnaire pour trouver l'aliment qu'il vous faut consommer ainsi que des recettes par correspondance.</h6>
+						</div>
+						<div class="section-wrapper">
+								<div class="row justify-content-center align-items-center">
+										<div class="col-lg-6 col-12">
+												<div class="contact-form">
+														<form>
+															<table style="padding:50%;">
+									                <tr>
+									                    <td><label>Age :</label></td>
+									                    <td><input type="number" name="age" id="age" placeholder="Veuillez indiquer votre age" required/></td>
+									                </tr>
+									                <tr>
+									                    <td><label>Sexe :</label></td>
+									                    <td><input type="radio" value="M" name="sexe" id="sexe"/>M
+																			<input type="radio" value="F" name="sexe" id="sexe"/>F</td>
+									                </tr>
+									                <tr>
+									                    <td><label>Quels sont vos maux?</label></td>
+									                    <td><select name="maux" id="maux" placeholder="indiquer un maux que vous ressentez" required>
+									                        <option>Maux de tête</option>
+									                        <option>Nausées</option>
+									                        <option>Manque d'appétit</option>
+									                        <option>Maux de ventre</option></select></td>
+									                </tr>
+																	<tr>
+									                    <td><label>Avez-vous des intollerance?</label></td>
+																			<td><select name="intollerance" id="intollerance" placeholder="indiquer une intollerance si vous en avez" required>
+									                        <option>Gluten</option>
+									                        <option>Lactose</option>
+									                        <option>Oeufs</option>
+									                        <option>Autres</option>
+											                    <option>Aucune intollerance</option></select></td>
+								                </tr>
+									                <tr>
+									                    <td><label>Avez-vous des allergies? Si oui, veuillez les indiquer.</label></td>
+																			<td><input type="text" placeholder="Veuiller écrire les aliments auxquels vous etes allergique"/></td>
+									                </tr>
+									                <tr>
+									                    <td><label>Etes-vous sous traitements pharmaceutiques actuellement? <br>Si oui, pour quelle maladie?</label></td>
+									                    <td><select name="maladie" id="maladie" required>
+									                        <option>Hypertension</option>
+									                        <option>Insuline</option>
+									                        <option>Carence en fer, en vitamine</option>
+									                        <option>Hypertyroidie</option>
+																					<option>Diabete</option>
+																					<option>Autres</option>
+																					<option>Aucun traitement depuis 3 mois</option></select></td>
+									                </tr>
+																	<tr><td colspan="2"><input type="checkbox" name="consensus" id="consensus" checked="checked" required><label>J’ai lu les conditions initiales.*</label></td></tr>
+																	<tr><td colspan="2">J'enregistre mes données pour ma prochaine connexion, <a href="#">ici</a>.</td></tr>
+																	<tr><td>	<a href="#" class="food-btn style-2"><span>ENVOI</span>
+
+																		</table>
+														</form>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</section>
+		<!-- Booking Table Section Ending Here -->
+<br>
+			  <!-- Book Product Section Start here -->
+            <div class="container">
+                <div class="section-header style-2">
+                    <h5>Chercher par symptômes</h5>
+                    <a href="#" class="text-btn">Tous les symptômes<i class="icofont-rounded-double-right"></i></a>
+                </div>
+                <div class="section-wrapper">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="product-item">
+                                <div class="product-thumb">
+                                    <img src="assets/images/symptomes/mauxdetete.jpg" alt="food-product">
+                                </div>
+                                <div class="product-content">
+                                    <p>Maux de tête</p>
+                                    <h6><a href="#">Curcuma</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="product-item">
+                                <div class="product-thumb">
+                                    <img src="assets/images/symptomes/nausee.png" alt="food-product">
+                                </div>
+                                <div class="product-content">
+                                    <p>Nausées ou vomissements</p>
+                                    <h6><a href="#">Gingembre</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="product-item">
+                                <div class="product-thumb">
+                                    <img src="assets/images/symptomes/mauxventre.jpg" alt="food-product">
+                                </div>
+                                <div class="product-content">
+                                    <p>Maux de ventre</p>
+                                    <h6><a href="#">Fruits et Légumes</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="product-item">
+                                <div class="product-thumb">
+                                    <img src="assets/images/symptomes/mauxgorge.webp" alt="food-product">
+                                </div>
+                                <div class="product-content">
+                                    <p>Maux de gorge</p>
+                                    <h6><a href="#">Epinards</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Book Product Section Ending here -->
+
+<br>
+
+
+				<!-- Blog Page Section Start Here -->
+														<aside>
+																<div class="widget widget-tags">
+																		<div class="widget-header">
+																				<h5>Les aliments les plus recherchés : </h5>
+																		</div>
+																		<ul class="widget-wrapper d-flex flex-wrap justify-content-xl-between">
+																				<li><a href="#">miel</a></li>
+																				<li><a href="#" class="active">citron</a></li>
+																				<li><a href="#">pamplemousse</a></li>
+																				<li><a href="#">ail</a></li>
+																				<li><a href="#">ciboulette</a></li>
+																				<li><a href="#">kiwi</a></li>
+																				<li><a href="#">pomme</a></li>
+																				<li><a href="#">épinards</a></li>
+																				<li><a href="#">camomille</a></li>
+																		</ul>
+																</div>
+														</aside>
+
+				<!-- Blog Page Section Ending Here -->
+
+
+        <!-- Photo Gallery Section Start Here -->
+        <section class="gallery-section padding-tb bg-body">
+            <div class="container">
+                <div class="gallery-area">
+                    <div class="section-header style-2">
+                        <h4>Adoptez les bonnes habitudes!</h4>
+                    </div>
+                    <div class="section-wrapper">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                <div class="gallery-item">
+                                    <div class="gallery-thumb">
+                                        <img src="assets/images/symptomes/mangersain.webp" alt="gallery">
+                                        <a href="assets/images/symptomes/mangersain.webp" data-rel="lightcase" class="gallery-icon" title="Privilégiez les fruits et légumes!"><i class="icofont-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                <div class="gallery-item">
+                                    <div class="gallery-thumb">
+                                        <img src="assets/images/symptomes/epinard.jpg" alt="gallery">
+                                        <a href="assets/images/symptomes/epinard.jpg" data-rel="lightcase" class="gallery-icon" title="Consommer les épinards pour combattre l'anémie!"><i class="icofont-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                <div class="gallery-item">
+                                    <div class="gallery-thumb">
+                                        <img src="assets/images/symptomes/petitdej.webp" alt="gallery">
+                                        <a href="assets/images/symptomes/petitdej.webp" data-rel="lightcase" class="gallery-icon" title="N'oubliez pas de prendre votre petit déjeuner!"><i class="icofont-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                <div class="gallery-item">
+                                    <div class="gallery-thumb">
+                                        <img src="assets/images/symptomes/poisson.jpg" alt="gallery">
+                                        <a href="assets/images/symptomes/poisson.jpg" data-rel="lightcase" class="gallery-icon" title="Consommez du poisson pour prévenir les maladies cardio-vasculaires!"><i class="icofont-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                <div class="gallery-item">
+                                    <div class="gallery-thumb">
+                                        <img src="assets/images/symptomes/eau.jpg" alt="gallery">
+                                        <a href="assets/images/symptomes/eau.jpg" data-rel="lightcase" class="gallery-icon" title="Buvez au moins 1 litre d'au par jour!"><i class="icofont-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                <div class="gallery-item">
+                                    <div class="gallery-thumb">
+                                        <img src="assets/images/symptomes/noalcool.jpg" alt="gallery">
+                                        <a href="assets/images/symptomes/noalcool.jpg" data-rel="lightcase" class="gallery-icon" title="Evitez de boire les boissons alcooliques et surtout le vin rouge!"><i class="icofont-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                <div class="gallery-item">
+                                    <div class="gallery-thumb">
+                                        <img src="assets/images/symptomes/nosucre.webp" alt="gallery">
+                                        <a href="assets/images/symptomes/nosucre.webp" data-rel="lightcase" class="gallery-icon" title="Doser le sucre et éviter de manger des aliments malsains!"><i class="icofont-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                <div class="gallery-item">
+                                    <div class="gallery-thumb">
+                                        <img src="assets/images/symptomes/courir.webp" alt="gallery">
+                                        <a href="assets/images/symptomes/courir.webp" data-rel="lightcase" class="gallery-icon" title="Faites du sport pour vous garder en bonne forme!"><i class="icofont-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Photo Gallery Section Ending Here -->
+
+		<!-- Footer Section Start Here -->
+		<footer class="footer style-2" style="background: #FEEB75;">
+			<div class="container">
+				<div class="footer-top">
+					<div class="footer-area text-center">
+						<div class="footer-logo">
+							<a href="index.html"><img src="assets/images/symptomes/logohealthme.jpeg" alt="footer-logo"></a>
+						</div>
+						<div class="scocial-media">
+							<a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+							<a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+							<a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+							<a href="#" class="vimeo"><i class="icofont-vimeo"></i></a>
+						</div>
+						<div class="footer-menu">
+							<ul>
+								<li><a href="#">Acceuil</a></li>
+								<li><a href="#">Symptômes</a></li>
+								<li><a href="#">Aliments</a></li>
+								<li><a href="#">Recettes</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom text-center">
+					<p>&copy; 2022 <a href="#"><span>Health Me!</span></a> Design by <a href="#"><span>M1 IM (UT1)</span></a>.</p>
+				</div>
+			</div>
+		</footer>
+		<!-- Footer Section Ending Here -->
+
+
+
+		<script src="assets/js/jquery.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/isotope.pkgd.min.js"></script>
+		<script src="assets/js/wow.min.js"></script>
+		<script src="assets/js/swiper.min.js"></script>
+		<script src="assets/js/tab.js"></script>
+		<script src="assets/js/lightcase.js"></script>
+		<script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/functions.js"></script>
+	</body>
+</html>
