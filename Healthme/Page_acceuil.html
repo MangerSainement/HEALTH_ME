@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		
+		<!-- google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+		<!-- favicon -->
+		<link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+		<!-- animate scss -->
+		<link rel="stylesheet" href="assets/css/animate.css">
+		<!-- bootstarp css -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<!-- icofont -->
+		<link rel="stylesheet" href="assets/css/icofont.min.css">
+		<!-- lightcase css -->
+		<link rel="stylesheet" href="assets/css/lightcase.css">
+		<!-- swiper css -->
+		<link rel="stylesheet" href="assets/css/swiper.min.css">
+		<!-- cusyom scss -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        
+		<title>Health me !</title>
+	</head>
+
+	<body>
+        <!-- preloader start here -->
+        <div class="preloader">
+            <div class="preloader-inner">
+                <div class="preloader-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!-- preloader ending here -->
+
+        
+        <!-- search area -->
+        <div class="search-area">
+            <div class="search-input">
+                <div class="search-close">
+                    <span></span>
+                    <span></span>
+                </div>
+                <form>
+                    <input type="text" name="text" placeholder="*Search Here.......">
+                </form>
+            </div>
+        </div>
+        <!-- search area -->
+
+		<!-- Mobile Menu Start Here -->
+		<div class="mobile-menu">
+			<nav class="mobile-header d-xl-none">
+				<div class="header-logo">
+					<a href="Page_acceuil.html" class="logo"><img src="assets/images/logohealthme/logo/logo.jpg" alt="logo"></a>
+				</div>
+				<div class="header-bar">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</nav>
+			<nav class="menu">
+				<div class="mobile-menu-area d-xl-none">
+					<div class="mobile-menu-area-inner" id="scrollbar">
+						<div class="mobile-search">
+							<input type="text" placeholder="Recherche...">
+							<button type="submit"><i class="icofont-search-2"></i></button>
+						</div>
+						<ul>
+							<li>
+                                <a class="active" href="Page_acceuil.html">Acceuil</a>
+                            </li>
+                            <li><a href="symptomes.html">Symptômes</a></li>
+                            <li><a href="Aliments.html">Aliments</a></li>
+							<li><a href="recette.html">Recette</a></li>
+	
+						</ul>
+						<div class="scocial-media">
+							<a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+							<a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+							<a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+							<a href="#" class="vimeo"><i class="icofont-vimeo"></i></a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!-- Mobile Menu Ending Here -->
+
+		<!-- header section start -->
+        <header class="header-section header-3 d-xl-block d-none">
+			<div class="container">
+                <div class="">
+                    <div class="header-top">
+                        <div class="logo">
+                            <a href="index-3.html"><img src="assets/images/logohealthme/logo/logo.jpg" alt="logo"></a>
+                        </div>
+                        <div class="menu-search-form">
+                            <div class="widget-search">
+                                <form method="get">
+                                    <input type="text" placeholder="Recherche..." name="s">
+                                    <button type="submit"><i class="icofont-search-2"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-bottom">
+                        <div class="main-menu">
+                            <ul>
+                                <li>
+                                    <a class="active" href="Page_acceuil.html">Acceuil</a>
+                                </li>
+                                <li><a href="symptomes.html">Symptômes</a></li>
+                                <li><a href="recette.html">Recettes</a></li>
+								<li>
+									<a href="Aliments.html">Aliments</a>								
+								</li>
+                            </ul>
+                        </div>
+                        <div class="author-option">
+                            <div class="author-area">
+                                <div class="author-account">
+                                    <div class="author-icon">
+                                        <img src="assets/images/food/author/01.png" alt="author">
+                                    </div>
+                                        <div class="author-select">
+                                            <select name="author-select" id="author-select">
+                                                <option value="1">Mon compte </option>
+                                                <option value="2">Se déconnecter </option>
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>					
+                    </div>
+			    </div>
+            </div>
+		</header>
+        <!-- header section ending-->
+
+
+<!-- About Section Start here -->
+<section class="about padding-tb" style="background: #fffaf4;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-12">
+                <div class="about-thumb">
+                    <img src="assets/images/about/abouthealthme/healthy-food.jpeg" alt="about-food">
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about-content">
+                    <div class="section-header">
+                        <span>Bienvenue chez Health Me !</span>
+                        <h2>A propos de Health Me !</h2>
+                    </div>
+                    <div class="section-wrapper">
+                        <p>Health Me ! est un site qui vous accompagne dans vos choix alimentaires. Trouvez des aliments adaptés à son état de santé et à ses goûts peut être une tâche compliquée.<br> Nous vous proposons de le faire à votre place ! Il suffit de nous donner une description de votre état de santé et nous vous présentons des aliments sains ainsi que des centaines des recettes faciles pour cuisiner chez soi!  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Section Ending here -->
+
+        <!-- Banner Section Start Here -->
+        <section class="banner style-3">
+            <div class="container">
+                <div class="">
+                    <div class="swiper-container gallery-top">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="banner-item">
+                                    <div class="banner-inner">
+                                        <div class="banner-thumb">
+                                            <img src="assets/images/banner/bg/05.jpg" alt="banner">
+                                        </div>
+                                        <div class="banner-content">
+                                            <div class="banner-content-area">
+                                                <div class="meta-tag">
+                                                    <div class="categori">
+                                                        <a href="#">Chicken</a>
+                                                    </div>
+                                                    <div class="rating">
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <span>(5.5)</span>
+                                                    </div>
+                                                </div>
+                                                <h4><a href="#">Ma nouvelle recette</a></h4>
+                                                <div class="meta-post">
+                                                    <ul>
+                                                        <li>
+                                                            <img src="assets/images/meta-post/recipe/01.jpg" alt="food-recipe">
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-clock-time"></i>
+                                                            <a href="#" class="date">Temps de cuisson: 30 min</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <p>Description recette</p>
+                                                <div class="meta-post mb-0">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="icofont-heart-alt"></i>
+                                                            <a href="#" class="heart">20 Likes</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-eye"></i>
+                                                            <a href="#" class="view">2636 Vues</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-speech-comments"></i>
+                                                            <a href="#" class="comment">24 Commentaires</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-item">
+                                    <div class="banner-inner">
+                                        <div class="banner-thumb">
+                                            <img src="assets/images/banner/bg/02.jpg" alt="banner">
+                                        </div>
+                                        <div class="banner-content">
+                                            <div class="banner-content-area">
+                                                <div class="meta-tag">
+                                                    <div class="categori">
+                                                        <a href="#">aubergine</a>
+                                                    </div>
+                                                    <div class="rating">
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <span>(5.5)</span>
+                                                    </div>
+                                                </div>
+                                                <h4><a href="#">Ma nouvelle recette</a></h4>
+                                                <div class="meta-post">
+                                                    <ul>
+                                                        <li>
+                                                            <img src="assets/images/meta-post/recipe/01.jpg" alt="food-recipe">
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-clock-time"></i>
+                                                            <a href="#" class="date">Temps de cuisson: 30 min</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <p>Description recette</p>
+                                                <div class="meta-post mb-0">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="icofont-heart-alt"></i>
+                                                            <a href="#" class="heart">20 Likes</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-eye"></i>
+                                                            <a href="#" class="view">2636 Vues</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-speech-comments"></i>
+                                                            <a href="#" class="comment">24 Commentaires</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-item">
+                                    <div class="banner-inner">
+                                        <div class="banner-thumb">
+                                            <img src="assets/images/banner/bg/03.jpg" alt="banner">
+                                        </div>
+                                        <div class="banner-content">
+                                            <div class="banner-content-area">
+                                                <div class="meta-tag">
+                                                    <div class="categori">
+                                                        <a href="#">Fraise</a>
+                                                    </div>
+                                                    <div class="rating">
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <span>(5.5)</span>
+                                                    </div>
+                                                </div>
+                                                <h4><a href="#">Ma nouvelle recette</a></h4>
+                                                <div class="meta-post">
+                                                    <ul>
+                                                        <li>
+                                                            <img src="assets/images/meta-post/recipe/01.jpg" alt="food-recipe">
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-clock-time"></i>
+                                                            <a href="#" class="date">Temps de cuisson: 30 min</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <p>Description recette</p>
+                                                <div class="meta-post mb-0">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="icofont-heart-alt"></i>
+                                                            <a href="#" class="heart">20 Likes</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-eye"></i>
+                                                            <a href="#" class="view">2636 Vues</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-speech-comments"></i>
+                                                            <a href="#" class="comment">24 Commentaires</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-item">
+                                    <div class="banner-inner">
+                                        <div class="banner-thumb">
+                                            <img src="assets/images/banner/bg/04.jpg" alt="banner">
+                                        </div>
+                                        <div class="banner-content">
+                                            <div class="banner-content-area">
+                                                <div class="meta-tag">
+                                                    <div class="categori">
+                                                        <a href="#">Orange</a>
+                                                    </div>
+                                                    <div class="rating">
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <span>(5.5)</span>
+                                                    </div>
+                                                </div>
+                                                <h4><a href="#">Ma nouvelle recette</a></h4>
+                                                <div class="meta-post">
+                                                    <ul>
+                                                        <li>
+                                                            <img src="assets/images/meta-post/recipe/01.jpg" alt="food-recipe">
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-clock-time"></i>
+                                                            <a href="#" class="date">Temps de cuisson: 30 min</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <p>Description recette</p>
+                                                <div class="meta-post">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="icofont-heart-alt"></i>
+                                                            <a href="#" class="heart">20 Likes</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-eye"></i>
+                                                            <a href="#" class="view">2636 Vues</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icofont-speech-comments"></i>
+                                                            <a href="#" class="comment">24 Commentaires</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-container gallery-thumbs">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="banner-bitem">
+                                    <div class="banner-binner">
+                                        <div class="banner-bcontent">
+                                            <div class="meta-tag">
+                                                <div class="categori">
+                                                    <a href="#0">Aliment1</a>
+                                                </div>
+                                            </div>
+                                            <h6>Ma nouvelle recette</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-bitem">
+                                    <div class="banner-binner">
+                                        <div class="banner-bcontent">
+                                            <div class="meta-tag">
+                                                <div class="categori">
+                                                    <a href="#0">Aliment2</a>
+                                                </div>
+                                            </div>
+                                            <h6>Ma nouvelle recette</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-bitem">
+                                    <div class="banner-binner">
+                                        <div class="banner-bcontent">
+                                            <div class="meta-tag">
+                                                <div class="categori">
+                                                    <a href="#0">Aliment3</a>
+                                                </div>
+                                            </div>
+                                            <h6>Ma nouvelle recette</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-bitem">
+                                    <div class="banner-binner">
+                                        <div class="banner-bcontent">
+                                            <div class="meta-tag">
+                                                <div class="categori">
+                                                    <a href="#0">Aliment4</a>
+                                                </div>
+                                            </div>
+                                            <h6>Ma nouvelle recette</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-bitem">
+                                    <div class="banner-binner">
+                                        <div class="banner-bcontent">
+                                            <div class="meta-tag">
+                                                <div class="categori">
+                                                    <a href="#0">Aliment5</a>
+                                                </div>
+                                            </div>
+                                            <h6>Ma nouvelle recette</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Banner Section Ending Here -->
+        
+        <!-- Recipes Categories Section Start Here -->
+        <section class="recipe-categori padding-tb bg-body pb-0" style="background-image:url(assets/images/backgroundhealthme/170213_00_2x.jpg);">
+            <div class="container">
+                <div class="section-header style-2">
+                    <h4>Catégories de recettes</h4>
+                    <a href="#" class="text-btn">Toutes les recettes<i class="icofont-rounded-double-right"></i></a>
+                </div>
+                <div class="section-wrapper">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <img src="assets/images/food-recipe/01.png" alt="food-recipe">
+                                </div>
+                                <div class="recipe-content">
+                                    <a href="#">Viandes</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <img src="assets/images/food-recipe/02.png" alt="food-recipe">
+                                </div>
+                                <div class="recipe-content">
+                                    <a href="#">Dessert</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <img src="assets/images/food-recipe/03.png" alt="food-recipe">
+                                </div>
+                                <div class="recipe-content">
+                                    <a href="#">Poissons</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <img src="assets/images/food-recipe/01.png" alt="food-recipe">
+                                </div>
+                                <div class="recipe-content">
+                                    <a href="#">Volailles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <img src="assets/images/food-recipe/08.png" alt="food-recipe">
+                                </div>
+                                <div class="recipe-content">
+                                    <a href="#">Salades</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <img src="assets/images/food-recipe/06.png" alt="food-recipe">
+                                </div>
+                                <div class="recipe-content">
+                                    <a href="#">Boissons</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <img src="assets/images/food-recipe/07.png" alt="food-recipe">
+                                </div>
+                                <div class="recipe-content">
+                                    <a href="#">Petit-déjeuner</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <img src="assets/images/food-recipe/08.png" alt="food-recipe">
+                                </div>
+                                <div class="recipe-content">
+                                    <a href="#">Diner</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Recipes Categories Section Ending Here -->
+        <!-- Symptomes Section Start Here -->
+        <section class="recent-recipe padding-tb bg-body pb-0">
+            <div class="container">
+                <div class="section-header style-2">
+                    <h4>Symptômes les plus fréquents</h4>
+                    <a href="#" class="text-btn"> Voir tous les symptômes <i class="icofont-rounded-double-right"></i></a>
+                </div>
+                <div class="section-wrapper">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <a href="#"> <img src="assets/images/personnesmalades/fatigue.jpg" alt="fatigue"></a>
+                                </div>
+                                <div class="recipe-content">
+                                    <div class="meta-tag">
+                                        <div class="categori">
+                                            <a href="#">Aliment3</a>
+                                        </div>
+                                        <div class="rating">
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                        </div>
+                                    </div>
+                                    <h6><a href="#">Découvrez nos meilleurs aliments contre la fatigue</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <a href="#"> <img src="assets/images/personnesmalades/mal de gorge.jpg" alt="mal_de_gorge"></a>
+                                </div>
+                                <div class="recipe-content">
+                                    <div class="meta-tag">
+                                        <div class="categori">
+                                            <a href="#">Aliment2</a>
+                                        </div>
+                                        <div class="rating">
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <span>(5.5)</span>
+                                        </div>
+                                    </div>
+                                    <h6><a href="#">Nos recettes pratiques en cas de mal de gorge</a></h6>
+                                    <div class="meta-post">
+                                        <ul>
+                                            <li>
+                                                <img src="assets/images/meta-post/recipe/01.jpg" alt="food-recipe">
+                                            </li>
+                                            <li>
+                                                <i class="icofont-clock-time"></i>
+                                                <a href="#" class="date">Temps de cuisson: 30 min</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <a href="#"> <img src="assets/images/personnesmalades/maux de tete.jpg" alt="maux_de_tete"></a>
+                                </div>
+                                <div class="recipe-content">
+                                    <div class="meta-tag">
+                                        <div class="categori">
+                                            <a href="#">Aliment1</a>
+                                        </div>
+                                    </div>
+                                    <h6><a href="#">Nos conseils alimentaires contre le maux de tête</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <a href="#"> <img src="assets/images/personnesmalades/mulher-doente-sentado-na-cama-assoar-o-nariz-com-guardanapo_1262-18654.jpg" alt="maux_de_tete"></a>
+                                </div>
+                                <div class="recipe-content">
+                                    <div class="meta-tag">
+                                        <div class="categori">
+                                            <a href="#">Aliment1</a>
+                                        </div>
+                                    </div>
+                                    <h6><a href="#">Nos meilleurs aliments contre la grippe</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <a href="#"> <img src="assets/images/personnesmalades/femme aulit.webp" alt="maux_de_tete"></a>
+                                </div>
+                                <div class="recipe-content">
+                                    <div class="meta-tag">
+                                        <div class="categori">
+                                            <a href="#">Aliment1</a>
+                                        </div>
+                                    </div>
+                                    <h6><a href="#">Les aliments bon pour le coeur</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="recipe-item">
+                                <div class="recipe-thumb">
+                                    <a href="#"> <img src="assets/images/personnesmalades/mal de ventre.webp" alt="mal-de-ventre"></a>
+                                </div>
+                                <div class="recipe-content">
+                                    <div class="meta-tag">
+                                        <div class="categori">
+                                            <a href="#">Aliment1</a>
+                                        </div>
+                                    </div>
+                                    <h6><a href="#">Nos conseils alimentaires contre le mal de ventre</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Recipes Categories Section Ending Here -->
+
+        <!-- Food Product Section Start here -->
+		<section class="product style-3 padding-tb bg-body " style="background-image: url(assets/images/backgroundhealthme/banniere-fruits-legumes-melanges_169521-1.webp);">
+            <div class="container">
+                <div class="section-header style-2">
+                    <h4>Aliments les plus populaires</h4>
+                    <a href="#" class="text-btn">Tous les Aliments<i class="icofont-rounded-double-right"></i></a>
+                </div>
+                <div class="section-wrapper">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="product-item">
+                                <div class="product-thumb">
+                                    <img src="assets/images/food/food healthme/090553604-e09071f2-edfb-4de8-bf5f-bd2b337c8bb0.jpg" alt="food-product">
+                                </div>
+                                <div class="product-content">
+                                    <p>Aliments1</p>
+                                    <h6><a href="#">Salades fruits</a></h6>
+                                    <div class="rating">
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="product-item">
+                                <div class="product-thumb">
+                                    <img src="assets/images/food/food healthme/saladedefruitstropicale-16420-1000x500.jpg" alt="food-product">
+                                </div>
+                                <div class="product-content">
+                                    <p>Aliment2</p>
+                                    <h6><a href="#">Salades fruits</a></h6>
+                                    <div class="rating">
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="product-item">
+                                <div class="product-thumb">
+                                    <img src="assets/images/food/food healthme/salades legumes.webp" alt="food-product">
+                                </div>
+                                <div class="product-content">
+                                    <p>Aliment3</p>
+                                    <h6><a href="#">Salades légumes</a></h6>
+                                    <div class="rating">
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="product-item">
+                                <div class="product-thumb">
+                                    <img src="assets/images/food/food healthme/strawberries.webp" alt="food-product">
+                                </div>
+                                <div class="product-content">
+                                    <p>Aliment4</p>
+                                    <h6><a href="#">Petit déjeuner fraises</a></h6>
+                                    <div class="rating">
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                        <i class="icofont-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Food Product Section Ending here -->
+
+
+
+        <!-- Blog Section Start here -->
+        <!-- Blog Section Ending here -->
+
+        
+        <!-- Newsletter Section Start Here -->
+        <!-- Newsletter Section Ending Here -->
+
+		<!-- Footer Section Start Here -->
+		<footer class="footer style-2" style="background-color: #fff;">
+			<div class="container">
+				<div class="footer-top">
+					<div class="footer-area text-center">
+						<div class="footer-logo">
+							<a href="index.html"><img src="assets/images/logohealthme/logo/logo.jpg" alt="footer-logo"></a>
+						</div>
+						<div class="scocial-media">
+							<a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+							<a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+							<a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+							<a href="#" class="vimeo"><i class="icofont-vimeo"></i></a>
+						</div>
+						<div class="footer-menu">
+							<ul>
+								<li><a href="#">Acceuil</a></li>
+								<li><a href="#">Comment ça marche?</a></li>
+								<li><a href="#">Menus</a></li>
+								<li><a href="#">Aliments</a></li>
+								<li><a href="#">Recettes</a></li>
+								<li><a href="#">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom text-center">
+					<p>&copy; 2022 <a href="#"><span>Health Me</span></a> Design by <a href="#"><span>MIAGE_IM_Meilleur_Projet</span></a>.</p>
+				</div>
+			</div>
+		</footer>
+		<!-- Footer Section Ending Here -->
+
+
+		
+		<script src="assets/js/jquery.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/isotope.pkgd.min.js"></script>
+		<script src="assets/js/wow.min.js"></script>
+		<script src="assets/js/swiper.min.js"></script>
+		<script src="assets/js/tab.js"></script>
+		<script src="assets/js/lightcase.js"></script>
+		<script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/functions.js"></script>
+	</body>
+</html>

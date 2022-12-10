@@ -2022,6 +2022,8 @@ button:focus {
 }
 .header-section.header-3 .header-bottom .main-menu ul > li a {
   padding: 23px 10px;
+  border-right: 1px solid #e6e6e6;
+
 }
 .header-section.header-3 .header-bottom .main-menu ul > li a.dd-icon-right {
   padding-right: 25px;
@@ -3089,6 +3091,70 @@ button:focus {
 }
 .food-services .section-wrapper .service-item:last-child .service-inner .service-thumb::after {
   display: none;
+}
+/* @@@@@@@@@@@@@  Popular Foods Section Start Here  @@@@@@@@@@@@@@ */
+.popular-foods .section-wrapper .col-12:nth-child(2) .p-food-item .p-food-inner:hover h6 a, .popular-foods .section-wrapper .col-12:nth-child(8) .p-food-item .p-food-inner:hover h6 a {
+  color: #9982fb;
+}
+.popular-foods .section-wrapper .col-12:nth-child(2) .p-food-item .p-food-inner .p-food-thumb span, .popular-foods .section-wrapper .col-12:nth-child(8) .p-food-item .p-food-inner .p-food-thumb span {
+  box-shadow: 0 10px 10px rgba(208, 125, 251, 0.1);
+  background: linear-gradient(to right, #9982fb, #d17ffb);
+}
+.popular-foods .section-wrapper .col-12:nth-child(2) .p-food-item .p-food-inner .p-food-content .p-food-author, .popular-foods .section-wrapper .col-12:nth-child(8) .p-food-item .p-food-inner .p-food-content .p-food-author {
+  background: linear-gradient(to top, #9982fb, #d17ffb);
+}
+.popular-foods .section-wrapper .col-12:nth-child(3) .p-food-item .p-food-inner:hover h6 a, .popular-foods .section-wrapper .col-12:nth-child(9) .p-food-item .p-food-inner:hover h6 a {
+  color: #84e9f0;
+}
+.popular-foods .section-wrapper .col-12:nth-child(3) .p-food-item .p-food-inner .p-food-thumb span, .popular-foods .section-wrapper .col-12:nth-child(9) .p-food-item .p-food-inner .p-food-thumb span {
+  box-shadow: 0 10px 10px rgba(131, 232, 240, 0.1);
+  background: linear-gradient(to right, #84e9f0, #589bfc);
+}
+.popular-foods .section-wrapper .col-12:nth-child(3) .p-food-item .p-food-inner .p-food-content .p-food-author, .popular-foods .section-wrapper .col-12:nth-child(9) .p-food-item .p-food-inner .p-food-content .p-food-author {
+  background: linear-gradient(to top, #84e9f0, #589bfc);
+}
+.popular-foods .section-wrapper .col-12:nth-child(4) .p-food-item .p-food-inner:hover h6 a, .popular-foods .section-wrapper .col-12:nth-child(10) .p-food-item .p-food-inner:hover h6 a {
+  color: #e076b0;
+}
+.popular-foods .section-wrapper .col-12:nth-child(4) .p-food-item .p-food-inner .p-food-thumb span, .popular-foods .section-wrapper .col-12:nth-child(10) .p-food-item .p-food-inner .p-food-thumb span {
+  box-shadow: 0 10px 10px rgba(224, 118, 176, 0.2);
+  background: linear-gradient(to right, #e076b0, #edb9e5);
+}
+.popular-foods .section-wrapper .col-12:nth-child(4) .p-food-item .p-food-inner .p-food-content .p-food-author, .popular-foods .section-wrapper .col-12:nth-child(10) .p-food-item .p-food-inner .p-food-content .p-food-author {
+  background: linear-gradient(to top, #e076b0, #edb9e5);
+}
+.popular-foods .section-wrapper .col-12:nth-child(5) .p-food-item .p-food-inner:hover h6 a, .popular-foods .section-wrapper .col-12:nth-child(11) .p-food-item .p-food-inner:hover h6 a {
+  color: #e69373;
+}
+.popular-foods .section-wrapper .col-12:nth-child(5) .p-food-item .p-food-inner .p-food-thumb span, .popular-foods .section-wrapper .col-12:nth-child(11) .p-food-item .p-food-inner .p-food-thumb span {
+  box-shadow: 0 10px 10px rgba(230, 147, 115, 0.1);
+  background: linear-gradient(to right, #e69373, #d66f99);
+}
+.popular-foods .section-wrapper .col-12:nth-child(5) .p-food-item .p-food-inner .p-food-content .p-food-author, .popular-foods .section-wrapper .col-12:nth-child(11) .p-food-item .p-food-inner .p-food-content .p-food-author {
+  background: linear-gradient(to top, #e69373, #d66f99);
+}
+.popular-foods .section-wrapper .col-12:nth-child(6) .p-food-item .p-food-inner:hover h6 a, .popular-foods .section-wrapper .col-12:nth-child(12) .p-food-item .p-food-inner:hover h6 a {
+  color: #9cd432;
+}
+.popular-foods .section-wrapper .col-12:nth-child(6) .p-food-item .p-food-inner .p-food-thumb span, .popular-foods .section-wrapper .col-12:nth-child(12) .p-food-item .p-food-inner .p-food-thumb span {
+  box-shadow: 0 10px 10px rgba(145, 209, 55, 0.1);
+  background: linear-gradient(to right, #9cd432, #6bbe8e);
+}
+.popular-foods .section-wrapper .col-12:nth-child(6) .p-food-item .p-food-inner .p-food-content .p-food-author, .popular-foods .section-wrapper .col-12:nth-child(12) .p-food-item .p-food-inner .p-food-content .p-food-author {
+  background: linear-gradient(to top, #9cd432, #6bbe8e);
+}
+@media (min-width: 992px) {
+  .popular-foods .section-wrapper .col-12:nth-last-child(1) .p-food-item, .popular-foods .section-wrapper .col-12:nth-last-child(2) .p-food-item, .popular-foods .section-wrapper .col-12:nth-last-child(3) .p-food-item {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 991px) {
+  .popular-foods .section-wrapper .col-12:last-child .p-food-item {
+    margin-bottom: 0;
+  }
+}
+.popular-foods.style-2 .p-food-item {
+  box-shadow: 0 0 10px rgba(137, 137, 137, 0.1);
 }
 
 
