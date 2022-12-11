@@ -1,1 +1,5 @@
-# mangerSainement
+- le nom du projet ;
+- la description du projet en 10 ligne maximum ;
+- les membres de l'équipe ainsi que la répartition des rôles.
+- Le lien vers le board
+- Le lien vers le dossier Google Drive contenant les documents relatifs au projet.
