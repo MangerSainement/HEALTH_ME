@@ -10,7 +10,7 @@ L'équipe est composé de :
 
 - Arej Siham: Développeuse Web
 - Mambote Kidela Bienfait: Développeur Web
-- Pang Han : Data Anlyste
+- Pang Han: Data Anlyste
 - Rasolofoarimanana Ravaka: Data Analyste et Scrum Master
 - Zailel Abdeldjalil: Data Analyste et Product Owner
 
