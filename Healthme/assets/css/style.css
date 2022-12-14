@@ -985,7 +985,7 @@ button:focus {
 
 .p-food-item {
   margin-bottom: 30px;
- 
+
 }
 .p-food-item .p-food-inner {
   background: #fff;
@@ -4368,7 +4368,7 @@ p.comment-form-cookies-consent input {
 }
 
 .widget {
-  padding: 25px;
+  padding: 60px;
   background: #fff;
   margin-bottom: 30px;
   box-shadow: 0 0 10px rgba(136, 136, 136, 0.1);
@@ -4468,12 +4468,7 @@ p.comment-form-cookies-consent input {
 }
 .widget.widget-post ul.widget-wrapper li .post-content h6 a:hover {
   color: #C8DF59;
-}
-.widget.widget-post ul.widget-wrapper li .post-content p {
-  margin: 0;
-}
-.widget.widget-instagram {
-  padding: 0;
+
 }
 .widget.widget-instagram ul.widget-wrapper {
   padding: 25px 20px;
