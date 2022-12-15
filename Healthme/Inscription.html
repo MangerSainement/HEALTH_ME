@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<!-- google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+		<!-- favicon -->
+		<link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+		<!-- animate scss -->
+		<link rel="stylesheet" href="assets/css/animate.css">
+		<!-- bootstarp css -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<!-- icofont -->
+		<link rel="stylesheet" href="assets/css/icofont.min.css">
+		<!-- lightcase css -->
+		<link rel="stylesheet" href="assets/css/lightcase.css">
+		<!-- swiper css -->
+		<link rel="stylesheet" href="assets/css/swiper.min.css">
+		<!-- cusyom scss -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+		<title>Health Me!</title>
+	</head>
+
+	<body>
+
+        <!-- search area -->
+        <div class="search-area">
+            <div class="search-input">
+                <div class="search-close">
+                    <span></span>
+                    <span></span>
+                </div>
+                <form>
+                    <input type="text" name="text" placeholder="Recherche...">
+                </form>
+            </div>
+        </div>
+        <!-- search area -->
+
+		<!-- Mobile Menu Start Here -->
+		<div class="mobile-menu">
+			<nav class="mobile-header d-xl-none">
+				<div class="header-logo">
+					<a href="Page_acceuil.html" class="logo"><img src="assets/images/logohealthme/logo/logo.jpg" alt="logo"></a>
+				</div>
+				<div class="header-bar">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</nav>
+			<nav class="menu">
+				<div class="mobile-menu-area d-xl-none">
+					<div class="mobile-menu-area-inner" id="scrollbar">
+						<div class="mobile-search">
+							<input type="text" placeholder="Recherche...">
+							<button type="submit"><i class="icofont-search-2"></i></button>
+						</div>
+						<ul>
+							<li><a href="Page_acceuil.html">Acceuil</a></li>
+              <li><a href="symptomes.html">Symptômes</a></li>
+              <li><a href="Aliments.html">Aliments</a></li>
+							<li><a href="recette.html">Recettes</a></li>
+						</ul>
+						<div class="scocial-media">
+							<a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+							<a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+							<a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+							<a href="#" class="vimeo"><i class="icofont-vimeo"></i></a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!-- Mobile Menu Ending Here -->
+
+		<!-- header section start -->
+		<header class="header-section header-3 d-xl-block d-none">
+			<div class="container">
+                <div class="">
+                    <div class="header-top w-100">
+                        <div class="logo">
+                            <a href="Page_acceuil.html"><img src="assets/images/logohealthme/logo/logo.jpg" alt="logo"></a>
+                        </div>
+                        <div class="menu-search-form">
+                            <div class="widget-search">
+                                <form method="get">
+                                    <input type="text" placeholder="Recherche..." name="s">
+                                    <button type="submit"><i class="icofont-search-2"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-bottom w-100">
+                        <div class="main-menu">
+                            <ul>
+															<li><a href="Page_acceuil.html">Acceuil</a></li>
+								              <li><a href="symptomes.html">Symptômes</a></li>
+								              <li><a href="Aliments.html">Aliments</a></li>
+															<li><a href="recette.html">Recettes</a></li>
+														</ul>
+                        </div>
+												<div class="author-option">
+																	<div class="author-area">
+																			<div class="author-account">
+																					<div class="author-icon">
+																							<img src="assets/images/author/01.png" alt="author">
+																					</div>
+																							<div class="author-select">
+																									<select name="author-select" id="author-select">
+																											<option value="1"><a class"active">Mon compte </a> </option>
+																											<option value="2">Se déconnecter </option>
+																									</select>
+																							</div>
+																			</div>
+																	</div>
+															</div>
+                    </div>
+
+                </div>
+			</div>
+		</header>
+
+		<!-- Booking Table Section Start Here -->
+		<section class="booking-table padding-tb" style="background: #fffaf4;">
+				<div class="container">
+						<div class="section-header">
+								<h2>Rejoinez-nous !</h2>
+						</div>
+						<div class="section-wrapper">
+								<div class="row justify-content-center align-items-center">
+										<div class="col-lg-6 col-12">
+												<div class="contact-form">
+														<form>
+															<table style="width: 100%; ">
+									                <tr>
+									                    <th><label>Pseudo : </label></th>
+									                    <td style="text-align: center;" ><input type="text" placeholder="Veuillez indiquer un pseudo" style="text-align: center; width:100%; padding:0px;" required/></td>
+									                </tr>
+																	<tr>
+									                    <th><label>Sexe :</label></th>
+									                    <td style="text-align: center;"><input type="radio" value="M" name="sexe" id="sexe"/>M
+																			<input type="radio" value="F" name="sexe" id="sexe"/>F</td>
+									                </tr>
+									                <tr>
+									                    <th><label>Date anniversaire : </label></th>
+									                    <td style="text-align: center;"><input type="date" placeholder="JJ/MM/AAA" style="text-align: center; width:100%; padding:0px;" required/></td>
+									                </tr>
+									                <tr>
+									                    <th><label>Email : </label></th>
+									                    <td style="text-align: center;"><input type="email" placeholder="Inserer votre mail" style="text-align: center; width:100%; padding:0px;" required></td>
+									                </tr>
+																	<tr>
+									                    <th><label>Mot de passe : </label></th>
+																			<td style="text-align: center;"><input type="password" placeholder="Inserer un mot de passe valable" style="text-align: center; width:100%; padding:0px;" required/></td>
+																		</tr>
+																		<tr><td colspan="2"><input type="checkbox" checked="checked" required><label>J’ai lu les conditions initiales.</label></td></tr>
+																		<tr><td colspan="2"><input type="checkbox" required><label>J'enregistre mes données.</label></td></tr>
+																		<tr><td><a href="#" class="food-btn style-2"><span>CREER</span></tr>
+																		</table>
+														</form>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</section>
+		<!-- Booking Table Section Ending Here -->
+
+
+		<!-- Footer Section Start Here -->
+		<footer class="footer style-2" style="background: #fff;">
+			<div class="container">
+				<div class="footer-top">
+					<div class="footer-area text-center">
+						<div class="footer-logo">
+							<a href="Page_acceuil.html"><img src="assets/images/logohealthme/logo/logo.jpg" alt="footer-logo"></a>
+						</div>
+						<div class="scocial-media">
+							<a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+							<a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+							<a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+							<a href="#" class="vimeo"><i class="icofont-vimeo"></i></a>
+						</div>
+						<div class="footer-menu">
+							<ul>
+								<li><a href="Page_acceuil.html">Acceuil</a></li>
+								<li><a href="symptomes.html">Symptômes</a></li>
+								<li><a href="Aliments.html">Aliments</a></li>
+								<li><a href="recette.html">Recettes</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom text-center">
+					<p>&copy; 2022 <a href="#"><span>Health Me!</span></a> Design by <a href="#"><span>M1 IM (UT1)</span></a>.</p>
+				</div>
+			</div>
+		</footer>
+		<!-- Footer Section Ending Here -->
+
+
+
+		<script src="assets/js/jquery.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/isotope.pkgd.min.js"></script>
+		<script src="assets/js/wow.min.js"></script>
+		<script src="assets/js/swiper.min.js"></script>
+		<script src="assets/js/tab.js"></script>
+		<script src="assets/js/lightcase.js"></script>
+		<script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/functions.js"></script>
+	</body>
+</html>

@@ -13,6 +13,12 @@ body {
   background: white;
   padding-top: 75px;
 }
+
+input{
+  text-align: center;
+  width:100%;
+  padding:0px;
+}
 @media (min-width: 1200px) {
   body {
     padding-top: 0;
@@ -3069,7 +3075,7 @@ button:focus {
 }
 .food-category .food-box {
   padding: 60px 30px;
-  background: #FEEB75;
+  background: #fffaf4;
   width: 100%;
 }
 @media (min-width: 576px) {
@@ -4468,7 +4474,12 @@ p.comment-form-cookies-consent input {
 }
 .widget.widget-post ul.widget-wrapper li .post-content h6 a:hover {
   color: #C8DF59;
-
+}
+.widget.widget-post ul.widget-wrapper li .post-content p {
+  margin: 0;
+}
+.widget.widget-instagram {
+  padding: 0;
 }
 .widget.widget-instagram ul.widget-wrapper {
   padding: 25px 20px;
