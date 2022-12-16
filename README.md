@@ -11,7 +11,8 @@ L'équipe est composé de :
 - Zailel Abdeldjalil: Data Analyste et Product Owner
 
 
-Le Board Agile se trouve dans l'onglet "Projects".
+Le Board Agile : 
+- https://github.com/orgs/MangerSainement/projects/1
 
 Le lien vers le dossier Google Drive contenant les documents relatifs au projet:
 - https://drive.google.com/drive/folders/1LqwTFzXFUJvPbnLjk2G7upnur5-A0DKB?usp=sharing
