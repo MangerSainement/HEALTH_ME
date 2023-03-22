@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, request, session, redirect, url_for, jsonify
 import sqlite3, os, datetime
 
 def connect_to_db():
@@ -49,17 +49,36 @@ def inscription():
         if Intolerane == "Autres":
             Intolerane = request.form["Autre_Intolerance"]
         Allergie = request.form['allergie']
+        traitement_maladie = request.form['maladie']
+        # Si l'utilisateur choisit autre dans la formulaire'
+        if traitement_maladie == "Autres":
+            traitement_maladie = request.form['Autre_Maladie']
         Email = request.form['email']
         MotDePass = request.form['motdepass']
-        enregistrement = request.form['enregistrement']
+        enregistrement = request.form['enregistrement'
 
+        # si l'utilisateur choisit enregistrement, on enregistre ses informations dans la base de donnees
         if enregistrement == "oui":
             enregistrement = "1"
         else:
             enregistrement = "0"
 
+        # Verifier si tous les champs sont remplis
         if Pseudo == "" or Sexe == "" or DtNaissance == "" or Intolerane == "" or Allergie == "" or Email == "" or MotDePass == "":
             return render_template("Inscription.html", error="Veuillez remplir tous les champs")
+
+        # Verifier si l'utilisateur existe dans la base de données'
+        query_existant = f"""
+            select *
+            from Client
+            where EmailC = {Email}
+        """
+
+        # Stocker l'utilisateur dans la base de données'
+        user = {'useremail': Email, 'MotDePass': MotDePass}
+        users.append(user)
+        session['useremail'] = Email
+
         # save the user's info to database (if he wants)
         # selon le type de syptome, chercher le type de recette et chercher le type de aliment
         # Créer un écran de confirmation, puis passer à l'écran qui doit être affiché.
