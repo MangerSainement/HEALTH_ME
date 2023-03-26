@@ -74,6 +74,12 @@ def inscription():
             where EmailC = {Email}
         """
 
+        existant = excute_query(query_existant)
+        if len(existant) > 0:
+            return render_template("Inscription.html", error="Cet utilisateur existe déjà")
+
+        
+
         # Stocker l'utilisateur dans la base de données'
         user = {'useremail': Email, 'MotDePass': MotDePass}
         users.append(user)
