@@ -1,4 +1,6 @@
 import sqlite3
+
+import bcrypt
 from flask import Flask, render_template, request, session, redirect, url_for, jsonify, flash
 
 app = Flask(__name__)
@@ -7,11 +9,14 @@ app.config['SESSION_TYPE'] = 'filesystem'
 
 
 def connect_to_db():
-
+    dsn_tns = cx_Oracle.makedsn('localhost', '1521', service_name='XE')
+    conn = cx_Oracle.connect(user='PH', password='123456', dsn=dsn_tns)
+    return conn
 
 
 def execute_query(query):
-    conn, c = connect_to_db()
+    conn = connect_to_db()
+    c = conn.cursor()
     c.execute(query)
     conn.commit()
     conn.close()
@@ -60,6 +65,8 @@ def inscription():
 
         email = request.form['email']
         motDePass = request.form['motdepass']
+
+        # Si l'utilisateur choisit enregistrer ses informations
         enregistrement = request.form['enregistrement']
 
         # Verifier si tous les champs sont remplis
@@ -70,8 +77,7 @@ def inscription():
         # ------------------------------- Vérification l'adresse email est Unique --------------------------------------
         # Vérifier que l'adresse électronique de l'utilisateur existe déjà dans la base de données.
         # L'adresse électronique de l'utilisateur doit être unique en tant que nom de compte pour la connexion.
-        dsn_tns = cx_Oracle.makedsn('localhost', '1521', service_name='XE')
-        conn = cx_Oracle.connect(user='PH', password='123456', dsn=dsn_tns)
+
 
         query_existant = f""" 
             select *
@@ -97,11 +103,21 @@ def inscription():
         # ------------------------------- Stockage des info --------------------------------------
         # Stocker l'utilisateur dans la base de données'
         # si l'utilisateur choisit "enregistrement", on enregistre ses informations dans la base de donnees
+        # avant la insertion, on crypte le mot de passe en utilisant la fonction "Salted Hash"
         if enregistrement == "oui":
 
+            # creer "salt"
+            salt = bcrypt.gensalt()
+            # crypter le mot de passe
+            hashed_password = bcrypt.hashpw(motDePass.encode('utf-8'), salt)
 
+            query_insert = f"""
+                insert into Client (Pseudo, Sexe, DtNaissance, Intolerance, EmailC, MotDePass)
+                values ({pseudo}, {sex}, {dtNaissance}, {intolerance}, {email}, {hashed_password})
+            """
 
-        # save the user's info to database (if he wants)
+            execute_query(query_insert)
+
         # selon le type de syptome, chercher le type de recette et chercher le type de aliment
         # Créer un écran de confirmation, puis passer à l'écran qui doit être affiché.
         return redirect(url_for('page_confirmation'))
