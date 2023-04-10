@@ -73,11 +73,9 @@ def inscription():
         if pseudo == "" or sex == "" or dtNaissance == "" or intolerance == "" or allergie == "" or email == "" or motDePass == "":
             return render_template("Inscription.html", error="Veuillez remplir tous les champs")
 
-
         # ------------------------------- Vérification l'adresse email est Unique --------------------------------------
         # Vérifier que l'adresse électronique de l'utilisateur existe déjà dans la base de données.
         # L'adresse électronique de l'utilisateur doit être unique en tant que nom de compte pour la connexion.
-
 
         query_existant = f""" 
             select *
@@ -94,18 +92,15 @@ def inscription():
         # [Manque] HTML code - block pour recevoir ce message
         # <...>
 
-
         # Inscription réussie...
         # ==>
         # Stocker des donnees
 
-
         # ------------------------------- Stockage des info --------------------------------------
         # Stocker l'utilisateur dans la base de données'
         # si l'utilisateur choisit "enregistrement", on enregistre ses informations dans la base de donnees
-        # avant la insertion, on crypte le mot de passe en utilisant la fonction "Salted Hash"
+        # avant la insertion, on crypte le mot de passe en utilisant la fonction "Salted Hash" -- (RGBD)
         if enregistrement == "oui":
-
             # creer "salt"
             salt = bcrypt.gensalt()
             # crypter le mot de passe
@@ -119,11 +114,46 @@ def inscription():
             execute_query(query_insert)
 
         # selon le type de syptome, chercher le type de recette et chercher le type de aliment
-        # Créer un écran de confirmation, puis passer à l'écran qui doit être affiché.
+        # -------------------------------------- Session ---------------------------------------------------------------
+        # mettre les données dans la session
+        session['intolerance'] = intolerance
+        session['allergie'] = allergie
+        session['traitement_maladie'] = traitement_maladie
+
+        # La page de confirmation contient deux boutons,
+        # l'un permettant d'accéder à la page recommandée à l'utilisateur
+        # et l'autre de revenir à la page d'accueil.
         return redirect(url_for('page_confirmation'))
 
     # page d'inscription
     return render_template("Inscription.html")
+
+@app.route('/confirmation')
+def page_confirmation():
+    if request.method == 'POST':
+        # Recuperer des info de utlisateur de la session
+        if 'intolerance' in session:
+            intolerance = session['intolerance']
+        if 'allergie' in session:
+            allergie = session['allergie']
+        if 'traitement_maladie' in session:
+            traitement_maladie = session['traitement_maladie']
+
+        # -------------------------------------- Interroger sur la base ------------------------------------------------
+        # Chercher le type de recette et le type de aliment sur la base de données
+        # On va trouver le recette par rapport a aliments sante
+        query_recette = '''
+            
+        '''
+
+        res_query_recette = execute_query(query_recette)
+
+
+        return redirect(url_for('recette', recette=res_query_recette, al))
+
+
+
+    return render_template("Page_confirmation.html")
 
 
 # run-------------------------------------------------------------------------------------------------------------------
