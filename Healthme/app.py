@@ -113,7 +113,7 @@ def inscription():
         # ------------------------------- Stockage des info --------------------------------------
         # Stocker l'utilisateur dans la base de données'
         # si l'utilisateur choisit "enregistrement", on enregistre ses informations dans la base de donnees
-        # avant la insertion, on crypte le mot de passe en utilisant la fonction "Salted Hash" -- (RGPD)
+        # avant l'insertion, on crypte le mot de passe en utilisant la fonction "Salted Hash" -- (RGPD)
         if enregistrement == "oui":
             # creer "salt"
             salt = bcrypt.gensalt()
@@ -146,6 +146,7 @@ def inscription():
         session['intolerance'] = intolerance
         session['allergie'] = allergie
         session['traitement_maladie'] = traitement_maladie
+        session['email'] = email
 
         # La page de confirmation contient deux boutons,
         # l'un permettant d'accéder à la page recommandée à l'utilisateur
