@@ -128,6 +128,10 @@ def inscription():
 
     # page d'inscription
     return render_template("Inscription.html")
+@app.route('/connecter',methods=["POST","GET"])
+def connecter():
+    return render_template("connecter.html")
+
 
 
 @app.route('/confirmation')
