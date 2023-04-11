@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb3f3874-aaf0-448f-9e4a-a9359295d9b5" name="变更" comment="3.28 PH">
+    <list default="true" id="bb3f3874-aaf0-448f-9e4a-a9359295d9b5" name="变更" comment="4.11 PH">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Healthme/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Healthme/static/sass/sub-stylesheet/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/static/sass/sub-stylesheet/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Healthme/templates/Page_acceuil.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/Page_acceuil.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +53,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -74,6 +72,9 @@
   </component>
   <component name="RunManager" selected="Python.app">
     <configuration name="Inscription.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HEALTH_ME/Healthme/templates/Inscription.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Page_acceuil.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/HEALTH_ME/Healthme/templates/Page_acceuil.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="Aliments_Traitement" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -123,6 +124,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="JavaScript 调试.Page_acceuil.html" />
         <item itemvalue="Python.Aliments_Traitement" />
         <item itemvalue="JavaScript 调试.Inscription.html" />
       </list>
@@ -143,7 +145,7 @@
       <workItem from="1680020657538" duration="7907000" />
       <workItem from="1680596069469" duration="906000" />
       <workItem from="1681035065185" duration="1465000" />
-      <workItem from="1681147009068" duration="11892000" />
+      <workItem from="1681147009068" duration="18349000" />
     </task>
     <task id="LOCAL-00001" summary="3.28 PH">
       <created>1680020282988</created>
@@ -152,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680020282988</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="4.11 PH">
+      <created>1681208339698</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681208339698</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,10 +186,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="3.28 PH" />
-    <option name="LAST_COMMIT_MESSAGE" value="3.28 PH" />
+    <MESSAGE value="4.11 PH" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.11 PH" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HEALTH_ME$app.coverage" NAME="app 覆盖结果" MODIFIED="1681201019131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />
+    <SUITE FILE_PATH="coverage/HEALTH_ME$app.coverage" NAME="app 覆盖结果" MODIFIED="1681207924454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />
     <SUITE FILE_PATH="coverage/HEALTH_ME$Aliments_Traitement.coverage" NAME="Aliments_Traitement 覆盖结果" MODIFIED="1681165012573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
   </component>
 </project>
