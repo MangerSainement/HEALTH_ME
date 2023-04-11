@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb3f3874-aaf0-448f-9e4a-a9359295d9b5" name="变更" comment="4.11 PH">
+      <change afterPath="$PROJECT_DIR$/Healthme/templates/Page_confirmation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7e04207b-630a-4a65-bc60-fd4acba06a5a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7e04207b-630a-4a65-bc60-fd4acba06a5a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Healthme/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/templates/Inscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/Inscription.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +148,7 @@
       <workItem from="1680020657538" duration="7907000" />
       <workItem from="1680596069469" duration="906000" />
       <workItem from="1681035065185" duration="1465000" />
-      <workItem from="1681147009068" duration="18349000" />
+      <workItem from="1681147009068" duration="26858000" />
     </task>
     <task id="LOCAL-00001" summary="3.28 PH">
       <created>1680020282988</created>
@@ -190,7 +193,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="4.11 PH" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HEALTH_ME$app.coverage" NAME="app 覆盖结果" MODIFIED="1681207924454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />
+    <SUITE FILE_PATH="coverage/HEALTH_ME$app.coverage" NAME="app 覆盖结果" MODIFIED="1681224202295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />
     <SUITE FILE_PATH="coverage/HEALTH_ME$Aliments_Traitement.coverage" NAME="Aliments_Traitement 覆盖结果" MODIFIED="1681165012573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
   </component>
 </project>
