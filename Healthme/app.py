@@ -117,22 +117,22 @@ def inscription():
         if enregistrement == "oui":
             # creer "salt"
             salt = bcrypt.gensalt()
-            print(salt)
+            # print(salt)
 
             # crypter le mot de passe
             hashed_password = bcrypt.hashpw(motDePass.encode('utf-8'), salt)
-            print(hashed_password)
+            # print(hashed_password)
 
             dtNaissance = datetime.strptime(dtNaissance, '%Y-%m-%d')
             dtNaissance = dtNaissance.strftime('%d/%m/%Y')
-            print(dtNaissance)
+            # print(dtNaissance)
 
             hashed_password = hashed_password.decode('utf-8')
             salt = salt.decode('utf-8')
-            print(hashed_password)
-            print(salt)
-            print(11111)
-            print(sex)
+            # print(hashed_password)
+            # print(salt)
+            # print(11111)
+            # print(sex)
 
             query_insert = f"""
                 insert into Client (Pseudo, Sexe, DateAnniversaieC, EmailC, MOTDEPASSE, STORED_SALT)
