@@ -4,7 +4,7 @@ import cx_Oracle
 import bcrypt
 from flask import Flask, render_template, request, session, redirect, url_for, flash
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='static')
 app.secret_key = 'my_secret_key'
 app.config['SESSION_TYPE'] = 'filesystem'
 
