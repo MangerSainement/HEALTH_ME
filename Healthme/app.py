@@ -128,6 +128,7 @@ def inscription():
     # page d'inscription
     return render_template("Inscription.html")
 
+
 @app.route('/confirmation')
 def page_confirmation():
     if request.method == 'POST':
@@ -148,10 +149,7 @@ def page_confirmation():
 
         res_query_recette = execute_query(query_recette)
 
-
-        return redirect(url_for('recette', recette=res_query_recette, al))
-
-
+        return redirect(url_for('recette', recette=res_query_recette))
 
     return render_template("Page_confirmation.html")
 
