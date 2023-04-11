@@ -1,6 +1,6 @@
 import cx_Oracle
 import bcrypt
-from flask import Flask, render_template, request, session, redirect, url_for, jsonify, flash
+from flask import Flask, render_template, request, session, redirect, url_for, flash
 
 app = Flask(__name__)
 app.secret_key = 'my_secret_key'
@@ -70,7 +70,8 @@ def inscription():
         enregistrement = request.form['enregistrement']
 
         # Verifier si tous les champs sont remplis
-        if pseudo == "" or sex == "" or dtNaissance == "" or intolerance == "" or allergie == "" or email == "" or motDePass == "":
+        if pseudo == "" or sex == "" or dtNaissance == "" or intolerance == "" or allergie == "" or email == "" \
+                or motDePass == "":
             return render_template("Inscription.html", error="Veuillez remplir tous les champs")
 
         # ------------------------------- Vérification l'adresse email est Unique --------------------------------------
@@ -107,8 +108,8 @@ def inscription():
             hashed_password = bcrypt.hashpw(motDePass.encode('utf-8'), salt)
 
             query_insert = f"""
-                insert into Client (Pseudo, Sexe, DtNaissance, Intolerance, EmailC, MotDePass)
-                values ({pseudo}, {sex}, {dtNaissance}, {intolerance}, {email}, {hashed_password})
+                insert into Client (Pseudo, Sexe, DateAnniversaieC, EmailC, MotDePasse)
+                values ({pseudo}, {sex}, {dtNaissance}, {email}, {hashed_password})
             """
 
             execute_query(query_insert)
