@@ -1,18 +1,16 @@
-import base64
-from datetime import datetime
-import cx_Oracle
-import bcrypt
-from flask import Flask, render_template, request, session, redirect, url_for, flash
+import sqlite3
 
-app = Flask(__name__,static_folder='static')
+import bcrypt
+from flask import Flask, render_template, request, session, redirect, url_for, jsonify, flash
+
+app = Flask(__name__)
 app.secret_key = 'my_secret_key'
 app.config['SESSION_TYPE'] = 'filesystem'
 
 
 def connect_to_db():
     dsn_tns = cx_Oracle.makedsn('localhost', '1521', service_name='XE')
-    conn = cx_Oracle.connect(user='C##PH', password='123456', dsn=dsn_tns)
-    print('Connecting to database')
+    conn = cx_Oracle.connect(user='PH', password='123456', dsn=dsn_tns)
     return conn
 
 
@@ -20,20 +18,9 @@ def execute_query(query):
     conn = connect_to_db()
     c = conn.cursor()
     c.execute(query)
-    res = c.fetchall()
     conn.commit()
     conn.close()
-    print('Executing query')
-    return res
-
-
-def execute_insert(query):
-    conn = connect_to_db()
-    c = conn.cursor()
-    c.execute(query)
-    conn.commit()
-    conn.close()
-    print('insert!')
+    return c.fetchall()
 
 
 # page d'acceuil---------------------------------------------------------------------------
@@ -62,7 +49,7 @@ def inscription():
     # recuperer des info de utlisateur
     if request.method == 'POST':
         pseudo = request.form["Pseudo"]
-        sex = request.form["sexe"]
+        sex = request.form["sex"]
         dtNaissance = request.form["Dt"]
         intolerance = request.form["intolerance"]
 
@@ -83,8 +70,7 @@ def inscription():
         enregistrement = request.form['enregistrement']
 
         # Verifier si tous les champs sont remplis
-        if pseudo == "" or sex == "" or dtNaissance == "" or intolerance == "" or allergie == "" or email == "" \
-                or motDePass == "":
+        if pseudo == "" or sex == "" or dtNaissance == "" or intolerance == "" or allergie == "" or email == "" or motDePass == "":
             return render_template("Inscription.html", error="Veuillez remplir tous les champs")
 
         # ------------------------------- Vérification l'adresse email est Unique --------------------------------------
@@ -94,7 +80,7 @@ def inscription():
         query_existant = f""" 
             select *
             from Client
-            where EmailC = '{email}'
+            where EmailC = {email}
         """
 
         res_query_existant = execute_query(query_existant)
@@ -113,40 +99,26 @@ def inscription():
         # ------------------------------- Stockage des info --------------------------------------
         # Stocker l'utilisateur dans la base de données'
         # si l'utilisateur choisit "enregistrement", on enregistre ses informations dans la base de donnees
-        # avant l'insertion, on crypte le mot de passe en utilisant la fonction "Salted Hash" -- (RGPD)
+        # avant la insertion, on crypte le mot de passe en utilisant la fonction "Salted Hash" -- (RGBD)
         if enregistrement == "oui":
             # creer "salt"
             salt = bcrypt.gensalt()
-            # print(salt)
-
             # crypter le mot de passe
             hashed_password = bcrypt.hashpw(motDePass.encode('utf-8'), salt)
-            # print(hashed_password)
-
-            dtNaissance = datetime.strptime(dtNaissance, '%Y-%m-%d')
-            dtNaissance = dtNaissance.strftime('%d/%m/%Y')
-            # print(dtNaissance)
-
-            hashed_password = hashed_password.decode('utf-8')
-            salt = salt.decode('utf-8')
-            # print(hashed_password)
-            # print(salt)
-            # print(11111)
-            # print(sex)
 
             query_insert = f"""
-                insert into Client (Pseudo, Sexe, DateAnniversaieC, EmailC, MOTDEPASSE, STORED_SALT)
-                values ('{pseudo}', '{sex}', to_date('{dtNaissance}', 'DD/MM/YYYY'), '{email}', '{hashed_password}', '{salt}')
+                insert into Client (Pseudo, Sexe, DtNaissance, Intolerance, EmailC, MotDePass)
+                values ({pseudo}, {sex}, {dtNaissance}, {intolerance}, {email}, {hashed_password})
             """
 
-            execute_insert(query_insert)
+            execute_query(query_insert)
+
         # selon le type de syptome, chercher le type de recette et chercher le type de aliment
         # -------------------------------------- Session ---------------------------------------------------------------
         # mettre les données dans la session
         session['intolerance'] = intolerance
         session['allergie'] = allergie
         session['traitement_maladie'] = traitement_maladie
-        session['email'] = email
 
         # La page de confirmation contient deux boutons,
         # l'un permettant d'accéder à la page recommandée à l'utilisateur
@@ -169,14 +141,11 @@ def page_confirmation():
             traitement_maladie = session['traitement_maladie']
 
         # -------------------------------------- Interroger sur la base ------------------------------------------------
-        # Chercher le type de recette et le type d'aliment sur la base de données
+        # Chercher le type de recette et le type de aliment sur la base de données
         # On va trouver le recette par rapport a aliments sante
         query_recette = '''
             
         '''
-
-        # 问题！
-        # 可能有多个结果，如何返回？
 
         res_query_recette = execute_query(query_recette)
 
