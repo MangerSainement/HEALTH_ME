@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@localhost">
-  <database-model serializer="dbm" dbms="ORACLE" family-id="ORACLE" format-version="4.45">
+  <database-model serializer="dbm" dbms="ORACLE" family-id="ORACLE" format-version="4.48">
     <root id="1">
       <IntrospectionLevel>3</IntrospectionLevel>
       <ServerVersion>21.0.0.0.0</ServerVersion>

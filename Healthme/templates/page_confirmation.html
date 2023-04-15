@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+<!-- Block title-->
+{% block title %}HEALTH ME! Confirmation {% endblock %}
+
+<!-- Block contenu_title-->
+{% block body_title %}
+<div>
+    Vous vous êtes inscrit avec succès à un compte
+</div>
+<div>
+    Vous avez le choix entre :
+</div>
+{% endblock %}
+
+<!-- Block contenu -->
+{% block body_content %}
+    <form method="post" action="recette.html">
+    <div class="buttons">
+            <button onclick="location.href='Page_acceuil.html'">Aller à la page d'accueil</button>
+            <button onclick="location.href='个性化定制.html'">Accédez à la page de personnalisation</button>
+    </div>
+{% endblock %}

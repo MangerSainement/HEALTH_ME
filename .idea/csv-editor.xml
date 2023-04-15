@@ -10,13 +10,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\Traitement_Donnees\Nutritions_US_new.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>

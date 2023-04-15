@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+              rel="stylesheet">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="static/images/favicon.png" type="image/png">
+        <!-- animate scss -->
+        <link rel="stylesheet" href="../static/css/animate.css">
+        <!-- bootstarp css -->
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+        <!-- icofont -->
+        <link rel="stylesheet" href="../static/css/icofont.min.css">
+        <!-- lightcase css -->
+        <link rel="stylesheet" href="../static/css/lightcase.css">
+        <!-- swiper css -->
+        <link rel="stylesheet" href="../static/css/swiper.min.css">
+        <!-- cusyom scss -->
+        <link rel="stylesheet" href="../static/css/style.css">
+        <!-- JavaScript js-->
+        <script src="../static/js/InscriptionJS.js"></script>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <!-- search area -->
+        <div class="search-area">
+            <div class="search-input">
+                <div class="search-close">
+                    <span></span>
+                    <span></span>
+                </div>
+                <form>
+                    <input type="text" name="text" placeholder="Recherche...">
+                </form>
+            </div>
+        </div>
+        <!-- search area -->
+
+        <!-- Mobile Menu Start Here -->
+        <div class="mobile-menu">
+            <nav class="mobile-header d-xl-none">
+                <div class="header-logo">
+                    <a href="/" class="logo"><img src="../static/images/logohealthme/logo/logo.jpg" alt="logo"></a>
+                </div>
+                <div class="header-bar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <nav class="menu">
+                <div class="mobile-menu-area d-xl-none">
+                    <div class="mobile-menu-area-inner" id="scrollbar">
+                        <div class="mobile-search">
+                            <input type="text" placeholder="Recherche...">
+                            <button type="submit"><i class="icofont-search-2"></i></button>
+                        </div>
+                        <ul>
+                            <li><a href="/">Accueil</a></li>
+                            <li><a href="/symptomes">Symptômes</a></li>
+                            <li><a href="/Aliments">Aliments</a></li>
+                            <li><a href="/recette">Recettes</a></li>
+                            <li><a class="active">S'inscrire</a></li>
+                        </ul>
+                        <div class="scocial-media">
+                            <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                            <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                            <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+                            <a href="#" class="vimeo"><i class="icofont-vimeo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Mobile Menu Ending Here -->
+
+        <!-- header section start -->
+        <header class="header-section header-3 d-xl-block d-none">
+            <div class="container">
+                <div class="">
+                    <div class="header-top w-100">
+                        <div class="logo">
+                            <a href="/"><img src="../static/images/logohealthme/logo/logo.jpg" alt="logo"></a>
+                        </div>
+                        <div class="menu-search-form">
+                            <div class="widget-search">
+                                <form method="get">
+                                    <input type="text" placeholder="Recherche..." name="s">
+                                    <button type="submit"><i class="icofont-search-2"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-bottom w-100">
+                        <div class="main-menu">
+                            <ul>
+                                <li><a href="/">Acceuil</a></li>
+                                <li><a href="/symptomes">Symptômes</a></li>
+                                <li><a href="/Aliments">Aliments</a></li>
+                                <li><a href="/recette">Recettes</a></li>
+                                <li><a class="active">S'inscrire</a></li>
+                            </ul>
+                        </div>
+                        <div class="author-option">
+                            <div class="author-area">
+                                <div class="author-account">
+                                    <div class="author-icon">
+                                        <img src="../static/images/author/01.png" alt="author">
+                                    </div>
+                                    <div class="author-select">
+                                        <select name="author-select" id="author-select">
+                                            <option value="1">Mon compte</option>
+                                            <option value="2">Se déconnecter</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Body Section Start Here -->
+        <section class="booking-table padding-tb" style="background: #fffaf4;">
+            <div class="container">
+                 <div class="section-header">
+                    {% block body_title %}{% endblock %}
+                </div>
+                <div>
+                    {% block body_content %}{% endblock %}
+                </div>
+            </div>
+        </section>
+        <!-- Body Section Ending Here -->
+
+
+        <!-- Footer Section Start Here -->
+        <footer class="footer style-2" style="background: #fff;">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-area text-center">
+                        <div class="footer-logo">
+                            <a href="Page_acceuil.html"><img src="../static/images/logohealthme/logo/logo.jpg"
+                                                             alt="footer-logo"></a>
+                        </div>
+                        <div class="scocial-media">
+                            <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                            <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                            <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+                            <a href="#" class="vimeo"><i class="icofont-vimeo"></i></a>
+                        </div>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="Page_acceuil.html">Acceuil</a></li>
+                                <li><a href="symptomes.html">Symptômes</a></li>
+                                <li><a href="Aliments.html">Aliments</a></li>
+                                <li><a href="recette.html">Recettes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom text-center">
+                    <p>&copy; 2022 <a href="#"><span>Health Me!</span></a> Design by <a href="#"><span>M1 IM (UT1)</span></a>.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section Ending Here -->
+
+
+        <script src="../static/js/jquery.js"></script>
+        <script src="../static/js/waypoints.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="../static/js/isotope.pkgd.min.js"></script>
+        <script src="../static/js/wow.min.js"></script>
+        <script src="../static/js/swiper.min.js"></script>
+        <script src="../static/js/tab.js"></script>
+        <script src="../static/js/lightcase.js"></script>
+        <script src="../static/js/jquery.counterup.min.js"></script>
+        <script src="../static/js/functions.js"></script>
+    </body>
+</html>

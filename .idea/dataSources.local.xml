@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="PY-223.8836.43">
+  <component name="dataSourceStorageLocal" created-in="PY-231.8109.197">
     <data-source name="@localhost" uuid="dcfc6e29-55d7-47b9-9602-0ca6cd6f447b">
       <database-info product="Oracle" version="Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production&#10;Version 21.3.0.0.0" jdbc-version="4.3" driver-name="Oracle JDBC driver" driver-version="21.5.0.0.0" dbms="ORACLE" exact-version="21.0.0.0.0" exact-driver-version="21.5">
         <extra-name-characters>$#</extra-name-characters>
@@ -33,6 +33,7 @@
           <node kind="schema">
             <name qname="@" />
             <name qname="PUBLIC" />
+            <name qname="C##PH" />
           </node>
         </introspection-scope>
       </schema-mapping>
