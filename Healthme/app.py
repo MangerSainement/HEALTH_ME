@@ -165,8 +165,14 @@ def inscription():
         # et l'autre de revenir à la page d'accueil.
         return redirect(url_for('page_confirmation'))
 
-    # page d'inscription
+    # ------------------------page d'inscription-------------------------------------------
+    
     return render_template("Inscription.html")
+    #------------- page connection------------------------------
+@app.route('/connecter',methods=["POST","GET"])
+def connecter():
+    return render_template("connecter.html")
+
 
 
 @app.route('/confirmation')
