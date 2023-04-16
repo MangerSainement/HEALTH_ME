@@ -4,7 +4,7 @@ import cx_Oracle
 import bcrypt
 from flask import Flask, render_template, request, session, redirect, url_for, flash
 
-app = Flask(__name__,static_folder='static')
+app = Flask(__name__, static_folder='static')
 app.secret_key = 'my_secret_key'
 app.config['SESSION_TYPE'] = 'filesystem'
 
@@ -167,14 +167,57 @@ def inscription():
         return redirect(url_for('page_confirmation'))
 
     # ------------------------page d'inscription-------------------------------------------
-    
+
     return render_template("Inscription.html")
 
-    #------------- page connection------------------------------
-@app.route('/connecter',methods=["POST","GET"])
+    # ------------- page connection------------------------------
+
+
+@app.route('/connecter', methods=["POST", "GET"])
 def connecter():
+    if request.method == 'POST':
+        email = request.form['email']
+        motDePass = request.form['motdepass']
+
+        # Verifier l'email et le mot de passe
+        error = None
+        res = check_user_credentials(email, motDePass)
+        if res == 1:
+            pass
+        elif res == 0:
+            error = "Nom d'utilisateur ou mot de passe incorrect"
+        elif res == 404:
+            error = "L'utilisateur n'existe pas, veuillez vous enregistrer"
+        return render_template("connecter.html", error=error)
+
     return render_template("connecter.html")
 
+
+def check_user_credentials(email, password):
+    # interroger le mot de passe
+    query = f"""
+            SELECT EmailC, MOTDEPASSE, STORED_SALT 
+            FROM Client 
+            WHERE EMAILC = '{email}'
+            """
+
+    user_data = execute_query(query)
+
+    if user_data:
+        email, stored_password, stored_salt = user_data[0], user_data[1], user_data[2]
+        # 使用存储的salt对提供的密码进行哈希
+        hashed_password = bcrypt.hashpw(password.encode('utf-8'), stored_salt.encode('utf-8'))
+
+        # 检查提供的密码哈希是否与存储的密码哈希匹配
+        if hashed_password.decode('utf-8') == stored_password:
+            print("1")
+            return 1
+        else:
+            print("0")
+            return 0
+    else:
+        print("404")
+        return 404
 
 
 @app.route('/confirmation', methods=['GET', 'POST'])
