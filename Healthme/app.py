@@ -151,7 +151,23 @@ def inscription():
 
             CodeC = execute_query(query_GetCodeC)
 
-            #
+            # il faut trouver code de l'aliment dans notre BD
+            query_GetCodeA = f"""
+                select CodeA
+                from ALIMENTS
+                where NOMA = {allergie}
+            """
+
+            CodeA = execute_query(query_GetCodeA)
+
+            # faire l'insertion d'allergie
+            query_allergie = f"""
+                insert into ALLERGIES(CodeC, CODEA)
+                value ({CodeC}, {CodeA})
+            """
+
+            execute_insert(query_allergie)
+            
         # selon le type de syptome, chercher le type de recette et chercher le type de aliment
         # -------------------------------------- Session ---------------------------------------------------------------
         # mettre les données dans la session
