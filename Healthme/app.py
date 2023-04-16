@@ -169,6 +169,7 @@ def inscription():
     # ------------------------page d'inscription-------------------------------------------
     
     return render_template("Inscription.html")
+
     #------------- page connection------------------------------
 @app.route('/connecter',methods=["POST","GET"])
 def connecter():
