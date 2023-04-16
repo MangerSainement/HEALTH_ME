@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb3f3874-aaf0-448f-9e4a-a9359295d9b5" name="变更" comment="4.11 PH">
-      <change afterPath="$PROJECT_DIR$/Healthme/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Healthme/templates/page_confirmation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Traitement_Donnees/Transformation-Contenir.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Traitement_Donnees/Transformation-csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7e04207b-630a-4a65-bc60-fd4acba06a5a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7e04207b-630a-4a65-bc60-fd4acba06a5a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dcfc6e29-55d7-47b9-9602-0ca6cd6f447b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dcfc6e29-55d7-47b9-9602-0ca6cd6f447b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Healthme/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Healthme/static/sass/sub-stylesheet/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/static/sass/sub-stylesheet/_main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/templates/Inscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/Inscription.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/templates/Page_acceuil.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/Page_acceuil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/templates/page_confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/page_confirmation.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,30 +78,11 @@
       <recent name="C:\Users\81317\OneDrive\文档\GitHub\HEALTH_ME\Traitement_Donnees" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Transformation-csv">
+  <component name="RunManager" selected="JavaScript 调试.page_confirmation.html">
     <configuration name="Page_acceuil.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/HEALTH_ME/Healthme/templates/Page_acceuil.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="Aliments_Traitement" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="HEALTH_ME" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Traitement_Donnees" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Traitement_Donnees/Aliments_Traitement.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+    <configuration name="page_confirmation.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HEALTH_ME/Healthme/templates/page_confirmation.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="Transformation-Contenir" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -177,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
+        <item itemvalue="JavaScript 调试.page_confirmation.html" />
         <item itemvalue="Python.Transformation-csv" />
         <item itemvalue="Python.Transformation-Contenir" />
-        <item itemvalue="Python.app" />
         <item itemvalue="JavaScript 调试.Page_acceuil.html" />
-        <item itemvalue="Python.Aliments_Traitement" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +180,7 @@
       <workItem from="1681404519636" duration="628000" />
       <workItem from="1681552311410" duration="6581000" />
       <workItem from="1681567846916" duration="83000" />
-      <workItem from="1681568130986" duration="6562000" />
+      <workItem from="1681568130986" duration="13451000" />
     </task>
     <task id="LOCAL-00001" summary="3.28 PH">
       <created>1680020282988</created>
@@ -268,8 +244,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HEALTH_ME$Transformation_Contenir.coverage" NAME="Transformation-Contenir 覆盖结果" MODIFIED="1681596556027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
-    <SUITE FILE_PATH="coverage/HEALTH_ME$app.coverage" NAME="app 覆盖结果" MODIFIED="1681571028855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />
+    <SUITE FILE_PATH="coverage/HEALTH_ME$app.coverage" NAME="app 覆盖结果" MODIFIED="1681635531907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />
     <SUITE FILE_PATH="coverage/HEALTH_ME$Aliments_Traitement.coverage" NAME="Aliments_Traitement 覆盖结果" MODIFIED="1681165012573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
-    <SUITE FILE_PATH="coverage/HEALTH_ME$Transformation_csv.coverage" NAME="Transformation-csv 覆盖结果" MODIFIED="1681593854268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
+    <SUITE FILE_PATH="coverage/HEALTH_ME$Transformation_csv.coverage" NAME="Transformation-csv 覆盖结果" MODIFIED="1681597014351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
   </component>
 </project>

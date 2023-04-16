@@ -2,21 +2,55 @@
 <!-- Block title-->
 {% block title %}HEALTH ME! Confirmation {% endblock %}
 
+<!-- Block style-inline-->
+{% block style_inline %}
+<style>
+    .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #8aca00;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #8aca00;
+        }
+</style>
+{% endblock %}
+
 <!-- Block contenu_title-->
 {% block body_title %}
-<div>
-    Vous vous êtes inscrit avec succès à un compte
+<div class="section-header">
+    <h2>Vous vous êtes inscrit avec succès à un compte !</h2>
 </div>
 <div>
-    Vous avez le choix entre :
+    <h4>Vous avez le choix entre :</h4>
 </div>
 {% endblock %}
 
 <!-- Block contenu -->
 {% block body_content %}
-    <form method="post" action="recette.html">
-    <div class="buttons">
-            <button onclick="location.href='Page_acceuil.html'">Aller à la page d'accueil</button>
-            <button onclick="location.href='个性化定制.html'">Accédez à la page de personnalisation</button>
-    </div>
+
+        <div class="buttons" style="align-content: center">
+            <button onclick="goBackToHomePage()">Aller à la page d'accueil</button>
+                <script>
+                    function goBackToHomePage() {
+                        window.location.href = '/';
+                    }
+                </script>
+
+            <form method="post" action="">
+            <button type="submit">Accédez à la page pour vous</button>
+            </form>
+        </div>
+
 {% endblock %}

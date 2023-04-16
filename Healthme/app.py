@@ -159,6 +159,7 @@ def inscription():
         session['allergie'] = allergie
         session['traitement_maladie'] = traitement_maladie
         session['email'] = email
+        session['pseudo'] = pseudo
 
         # La page de confirmation contient deux boutons,
         # l'un permettant d'accéder à la page recommandée à l'utilisateur
@@ -169,10 +170,10 @@ def inscription():
     return render_template("Inscription.html")
 
 
-@app.route('/confirmation')
+@app.route('/confirmation', methods=['GET', 'POST'])
 def page_confirmation():
     if request.method == 'POST':
-        # Recuperer des info de utlisateur de la session
+        # Recuperer de l'info d'utlisateur de la session
         if 'intolerance' in session:
             intolerance = session['intolerance']
         if 'allergie' in session:
@@ -182,7 +183,7 @@ def page_confirmation():
 
         # -------------------------------------- Interroger sur la base ------------------------------------------------
         # Chercher le type de recette et le type d'aliment sur la base de données
-        # On va trouver le recette par rapport a aliments sante
+        # On va trouver la recette par rapport a aliments sante
         query_recette = '''
             
         '''
@@ -192,7 +193,7 @@ def page_confirmation():
 
         res_query_recette = execute_query(query_recette)
 
-        return redirect(url_for('recette', recette=res_query_recette))
+        # return redirect(url_for('recette', recette=res_query_recette))
 
     return render_template("page_confirmation.html")
 
