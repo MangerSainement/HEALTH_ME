@@ -2243,7 +2243,6 @@ button:focus {
 .author-account {
   width: calc(100% - 215px);
   align-items: center;
-  padding-left: 30px;
 }
 .author-account .author-icon {
   width: 40px;
