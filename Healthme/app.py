@@ -221,7 +221,16 @@ def connecter():
         error = None
         res = check_user_credentials(email, motDePass)
         if res == 1:
-            pass
+            query_pseudo = f"""
+                select PSEUDO
+                from CLIENT
+                where EMAILC = {email}
+            
+            """
+
+            pseudo = execute_query(query_pseudo)
+            session['pseudo'] = pseudo[0][0]
+            return redirect(url_for('page_acceuil'))
         elif res == 0:
             error = "Nom d'utilisateur ou mot de passe incorrect"
         elif res == 404:
@@ -240,9 +249,13 @@ def check_user_credentials(email, password):
             """
 
     user_data = execute_query(query)
+    # print(user_data)
 
     if user_data:
-        email, stored_password, stored_salt = user_data[0], user_data[1], user_data[2]
+        email, stored_password, stored_salt = user_data[0][0], user_data[0][1], user_data[0][2]
+        # print(email)
+        # print(stored_password)
+        # print(stored_salt)
         # 使用存储的salt对提供的密码进行哈希
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), stored_salt.encode('utf-8'))
 
@@ -287,7 +300,7 @@ def page_confirmation():
 
 @app.route('/aliment_cliquer/<nom>')
 def aliment_cliquer():
-    if <nom> in 
+    pass
 # run-------------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
     app.run(debug=True)
