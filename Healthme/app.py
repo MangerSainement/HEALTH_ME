@@ -59,6 +59,11 @@ def recette():
     return render_template("recette.html")
 
 
+@app.route("/resultat")
+def resultat():
+    return render_template("resultat.html")
+
+
 @app.route('/Inscription', methods=["POST", "GET"])
 def inscription():
     # recuperer des info de utlisateur
