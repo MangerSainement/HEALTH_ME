@@ -1,4 +1,5 @@
 import cx_Oracle
+from translate import Translator
 
 def connect_to_db():
     dsn_tns = cx_Oracle.makedsn('localhost', '1521', service_name='XE')
@@ -35,32 +36,35 @@ def execute_insert(query):
 #
 # CodeA = execute_query(query_GetCodeA)
 
-symptome = 'Mal de tête'
+# symptome = 'Mal de tête'
+#
+# query_CodeS = f"""
+#                 select CodeS
+#                 from SYMPTOMES
+#                 where NOMS = '{symptome}'
+#             """
+#
+# CodeS = execute_query(query_CodeS)
+# CodeS = CodeS[0][0]
+# print(CodeS)
+#
+# email = 'panghanfr@gmail.com'
+# query_GetCodeC = f"""
+#                 select CodeC
+#                 from client
+#                 where EMAILC = '{email}'
+#             """
+#
+# CodeC = execute_query(query_GetCodeC)
+# CodeC = CodeC[0][0]
+#
+# query_Avoir = f"""
+#                 insert into AVOIR(CodeC, CodeS)
+#                 values ({CodeC}, {CodeS})
+#             """
+#
+# execute_insert(query_Avoir)
 
-query_CodeS = f"""
-                select CodeS
-                from SYMPTOMES
-                where NOMS = '{symptome}'
-            """
-
-CodeS = execute_query(query_CodeS)
-CodeS = CodeS[0][0]
-print(CodeS)
-
-email = 'panghanfr@gmail.com'
-query_GetCodeC = f"""
-                select CodeC 
-                from client
-                where EMAILC = '{email}'
-            """
-
-CodeC = execute_query(query_GetCodeC)
-CodeC = CodeC[0][0]
-
-query_Avoir = f"""
-                insert into AVOIR(CodeC, CodeS)
-                values ({CodeC}, {CodeS})
-            """
-
-execute_insert(query_Avoir)
-
+translator = Translator(from_lang='french', to_lang='english')
+translation = translator.translate("Bonjour")
+print(translation)

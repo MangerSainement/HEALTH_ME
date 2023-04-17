@@ -7,8 +7,7 @@
     <list default="true" id="bb3f3874-aaf0-448f-9e4a-a9359295d9b5" name="变更" comment="4.11 PH">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Healthme/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Healthme/templates/Inscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/Inscription.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Healthme/templates/connecter.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/connecter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/templates/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -76,7 +75,7 @@
       <recent name="C:\Users\81317\OneDrive\文档\GitHub\HEALTH_ME\Traitement_Donnees" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.test">
     <configuration name="page_confirmation.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HEALTH_ME/Healthme/templates/page_confirmation.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -170,8 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.app" />
         <item itemvalue="JavaScript 调试.page_confirmation.html" />
         <item itemvalue="Python.Transformation-csv" />
         <item itemvalue="Python.Transformation-Contenir" />
@@ -197,7 +196,7 @@
       <workItem from="1681404519636" duration="628000" />
       <workItem from="1681552311410" duration="6581000" />
       <workItem from="1681567846916" duration="83000" />
-      <workItem from="1681568130986" duration="30782000" />
+      <workItem from="1681568130986" duration="32473000" />
     </task>
     <task id="LOCAL-00001" summary="3.28 PH">
       <created>1680020282988</created>
@@ -260,9 +259,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="4.11 PH" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HEALTH_ME$test.coverage" NAME="test 覆盖结果" MODIFIED="1681737532074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme/templates" />
+    <SUITE FILE_PATH="coverage/HEALTH_ME$test.coverage" NAME="test 覆盖结果" MODIFIED="1681742743426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme/templates" />
     <SUITE FILE_PATH="coverage/HEALTH_ME$Transformation_Contenir.coverage" NAME="Transformation-Contenir 覆盖结果" MODIFIED="1681596556027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
-    <SUITE FILE_PATH="coverage/HEALTH_ME$app.coverage" NAME="app 覆盖结果" MODIFIED="1681740457028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />
+    <SUITE FILE_PATH="coverage/HEALTH_ME$app.coverage" NAME="app 覆盖结果" MODIFIED="1681741817798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />
     <SUITE FILE_PATH="coverage/HEALTH_ME$Aliments_Traitement.coverage" NAME="Aliments_Traitement 覆盖结果" MODIFIED="1681165012573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
     <SUITE FILE_PATH="coverage/HEALTH_ME$Transformation_csv.coverage" NAME="Transformation-csv 覆盖结果" MODIFIED="1681597014351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
   </component>

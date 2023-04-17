@@ -1,8 +1,10 @@
 import base64
 from datetime import datetime
+from translate import Translator
+
 import cx_Oracle
 import bcrypt
-from flask import Flask, render_template, request, session, redirect, url_for, flash
+from flask import Flask, render_template, request, session, redirect, url_for, flash, abort
 
 app = Flask(__name__, static_folder='static')
 app.secret_key = 'my_secret_key'
@@ -300,9 +302,11 @@ def page_confirmation():
 
 @app.route('/aliment_cliquer/<nom>')
 def aliment_cliquer(nom):
-    req= execute_query ("select NomA from Aliments ")
-    
-    if nom not in req:
+    translator = Translator(from_lang='french', to_lang='english')
+    nom_translation = translator.translate(nom)
+
+    req = execute_query("select NomA from Aliments")
+    if nom_translation not in req[0]:
         return abort(404)
 
     return render_template("aliment_cliquer.html", nom=nom)
