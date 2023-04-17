@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+<!-- Block title-->
+{% block title %}HEALTH ME! Confirmation {% endblock %}
+
+<!-- Block style-inline-->
+{% block style_inline %}
+<style>
+    .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #8aca00;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #8aca00;
+        }
+</style>
+{% endblock %}
+
+<!-- Block contenu_title-->
+{% block body_title %}
+<div class="section-header">
+    <h2>Vous vous êtes inscrit avec succès à un compte !</h2>
+</div>
+<div>
+    <h4>Vous avez le choix entre :</h4>
+</div>
+{% endblock %}
+
+<!-- Block contenu -->
+{% block body_content %}
+
+        <div class="buttons" style="align-content: center">
+            <button onclick="goBackToHomePage()">Aller à la page d'accueil</button>
+                <script>
+                    function goBackToHomePage() {
+                        window.location.href = '/';
+                    }
+                </script>
+
+            <form method="post" action="">
+            <button type="submit">Accédez à la page pour vous</button>
+            </form>
+        </div>
+
+{% endblock %}

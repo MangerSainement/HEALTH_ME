@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block body_content %}
+<section class="booking-table padding-tb" style="background: #fffaf4;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Rejoignez-nous !</h2>
+        </div>
+        <div class="section-wrapper">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 col-12">
+                    <div class="contact-form">
+                        <form action="" method="post">  <!-- action='' rendre sur page maintenant-->
+                            <table style="width: 100%; ">
+                                <tr>
+                                    <th><label>Pseudo : </label></th>
+                                    <td style="text-align: center;" ><input type="text" name="Pseudo" placeholder="Veuillez indiquer un pseudo" style="text-align: center; width:100%; padding:0px;" required/></td>
+                                </tr>
+                                <tr>
+                                    <th><label>Sexe :</label></th>
+                                    <td style="text-align: center;"><input type="radio" value="M" name="sexe" id="sexe"/>M
+                                        <input type="radio" value="F" name="sexe" id="sexe"/>F</td>
+                                </tr>									            
+                                <tr>
+                                    <th><label>Date anniversaire : </label></th>
+                                    <td style="text-align: center;"><input type="date" name="Dt" placeholder="JJ/MM/AAA" style="text-align: center; width:100%; padding:0px;" required/></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label>Avez-vous des intollerance?</label>
+                                    </th>
+                                    <td>
+                                        <select name="intolerance" id="intolerance"  onchange="Afficher_InputText_Intolerance()" required>
+                                            <option value="Aucune">Aucune intolérance</option>
+                                            <option value="Gluten">Gluten</option>
+                                            <option value="Lactose">Lactose</option>
+                                            <option value="Oeufs">Oeufs</option>
+                                            <option value="Autres">Autres</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div id="InputText_Intolerance" style="display: none">
+                                            Autre intolerance:<input type="text" name="Autre_Intolerance" placeholder="Autre">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>
+                                        <label>Avez-vous des allergies? Si oui, veuillez les indiquer.</label>
+                                    </th>
+                                    <td>
+                                        <input name="allergie" type="text" placeholder="Veuiller écrire les aliments auxquels vous etes allergique"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Etes-vous sous traitements pharmaceutiques actuellement? <br>Si oui, pour quelle maladie?</label>
+                                    </td>
+                                    <td>
+                                        <select name="maladie" id="maladie" onchange="Afficher_InputText_Maladie()" required>
+                                            <option value="Aucun">Aucun traitement depuis 3 mois</option>
+                                            <option value="Hypertension">Hypertension</option>
+                                            <option value="Insuline">Insuline</option>
+                                            <option value="CarenceFetV">Carence en fer, en vitamine</option>
+                                            <option value="Hypertyroidie">Hypertyroidie</option>
+                                            <option value="Diabete">Diabete</option>
+                                            <option value="Autres">Autres</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div id="InputText_Maladie" style="display: none">
+                                            Autre Maladie:<input type="text" name="Autre_Maladie" placeholder="Autre">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><label>Email : </label></th>
+                                    <td style="text-align: center;"><input name="email" type="email" placeholder="Inserer votre mail" style="text-align: center; width:100%; padding:0px;" required></td>
+                                </tr>
+                                <tr>
+                                    <th><label>Mot de passe : </label></th>
+                                    <td style="text-align: center;"><input name="motdepass" type="password" placeholder="Inserer un mot de passe valable" style="text-align: center; width:100%; padding:0px;" required/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="checkbox" checked="checked" required><label>J’ai lu les conditions initiales.</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="checkbox" required>
+                                        <label>J'enregistre mes données.</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#" class="food-btn style-2"><span>CREER</span></a>
+                                    </td>
+                                </tr>											
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Booking Table Section Ending Here -->
+{% endblock %}
