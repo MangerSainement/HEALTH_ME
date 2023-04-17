@@ -263,7 +263,9 @@ def page_confirmation():
 
     return render_template("page_confirmation.html")
 
-
+@app.route('/aliment_cliquer/<nom>')
+def aliment_cliquer():
+    if <nom> in 
 # run-------------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
     app.run(debug=True)
