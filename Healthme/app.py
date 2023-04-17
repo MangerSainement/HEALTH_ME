@@ -226,7 +226,7 @@ def connecter():
             query_pseudo = f"""
                 select PSEUDO
                 from CLIENT
-                where EMAILC = {email}
+                where EMAILC = '{email}'
             
             """
 
@@ -277,12 +277,12 @@ def check_user_credentials(email, password):
 def page_confirmation():
     if request.method == 'POST':
         # Recuperer de l'info d'utlisateur de la session
-        if 'intolerance' in session:
-            intolerance = session['intolerance']
-        if 'allergie' in session:
-            allergie = session['allergie']
-        if 'traitement_maladie' in session:
-            traitement_maladie = session['traitement_maladie']
+        # if 'intolerance' in session:
+        #     intolerance = session['intolerance']
+        # if 'allergie' in session:
+        #     allergie = session['allergie']
+        # if 'traitement_maladie' in session:
+        #     traitement_maladie = session['traitement_maladie']
 
         # -------------------------------------- Interroger sur la base ------------------------------------------------
         # Chercher le type de recette et le type d'aliment sur la base de données
@@ -310,6 +310,13 @@ def aliment_cliquer(nom):
         return abort(404)
 
     return render_template("aliment_cliquer.html", nom=nom)
+
+@app.route('/logout')
+def logout():
+    session.pop('email', None)
+    session.pop('pseudo', None)
+    return redirect(url_for('page_acceuil'))
+
 # run-------------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
     app.run(debug=True)
