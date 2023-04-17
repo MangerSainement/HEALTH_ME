@@ -80,11 +80,11 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = default_api.DefaultApi(api_client)
     analyze_recipe_request = AnalyzeRecipeRequest(
         language="en",
-        include_nutrition=False,
+        include_nutrition=True,
         include_taste=False,
     ) # AnalyzeRecipeRequest | Example request body.
     language = "en" # str | The input language, either \"en\" or \"de\". (optional)
-    include_nutrition = False # bool | Whether nutrition data should be added to correctly parsed ingredients. (optional)
+    include_nutrition = True # bool | Whether nutrition data should be added to correctly parsed ingredients. (optional)
     include_taste = False # bool | Whether taste data should be added to correctly parsed ingredients. (optional)
 
     try:
