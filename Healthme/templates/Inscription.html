@@ -1,4 +1,64 @@
 {% extends "base.html" %}
+
+{% block style_inline %}
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        form {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        input[type="text"], input[type="date"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .food-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .food-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+{% endblock %}
+
 {% block body_content %}
 <section class="booking-table padding-tb" style="background: #fffaf4;">
     <div class="container">
@@ -24,61 +84,33 @@
                                     <th><label>Date anniversaire : </label></th>
                                     <td style="text-align: center;"><input type="date" name="Dt" placeholder="JJ/MM/AAA" style="text-align: center; width:100%; padding:0px;" required/></td>
                                 </tr>
-                                <tr>
-                                    <th>
-                                        <label>Avez-vous des intollerance?</label>
-                                    </th>
-                                    <td>
-                                        <select name="intolerance" id="intolerance"  onchange="Afficher_InputText_Intolerance()" required>
-                                            <option value="Aucune">Aucune intolérance</option>
-                                            <option value="Gluten">Gluten</option>
-                                            <option value="Lactose">Lactose</option>
-                                            <option value="Oeufs">Oeufs</option>
-                                            <option value="Autres">Autres</option>
-                                        </select>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div id="InputText_Intolerance" style="display: none">
-                                            Autre intolerance:<input type="text" name="Autre_Intolerance" placeholder="Autre">
-                                        </div>
-                                    </td>
-                                </tr>
 
                                 <tr>
                                     <th>
-                                        <label>Avez-vous des allergies? Si oui, veuillez les indiquer.</label>
+                                        <label> Quels sont vos symptômes ?</label>
                                     </th>
+
                                     <td>
-                                        <input name="allergie" type="text" placeholder="Veuiller écrire les aliments auxquels vous etes allergique"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>Etes-vous sous traitements pharmaceutiques actuellement? <br>Si oui, pour quelle maladie?</label>
-                                    </td>
-                                    <td>
-                                        <select name="maladie" id="maladie" onchange="Afficher_InputText_Maladie()" required>
-                                            <option value="Aucun">Aucun traitement depuis 3 mois</option>
-                                            <option value="Hypertension">Hypertension</option>
-                                            <option value="Insuline">Insuline</option>
-                                            <option value="CarenceFetV">Carence en fer, en vitamine</option>
-                                            <option value="Hypertyroidie">Hypertyroidie</option>
-                                            <option value="Diabete">Diabete</option>
-                                            <option value="Autres">Autres</option>
-                                        </select>
+                                         <form>
+                                            <select name="symptomes" id="symptomes">
+                                                <option value="mal_de_tete">Mal de tête</option>
+                                                <option value="fievre">Fièvre</option>
+                                                <option value="mal_de_gorge">Mal de gorge</option>
+                                                <option value="diarrhee">Diarrhée</option>
+                                                <option value="constipation">Constipation</option>
+                                                <option value="palpitations">Palpitations</option>
+                                                <option value="difficultes_respiratoires">Difficultés respiratoires</option>
+                                                <option value="nez_bouche">Nez bouché</option>
+                                                <option value="douleur_articulaire">Douleur articulaire</option>
+                                                <option value="fatigue">Fatigue</option>
+                                                <option value="douleur_abdominale">Douleur abdominale</option>
+                                                <option value="ecoulement_nasal">Écoulement nasal</option>
+                                                <option value="mal_de_dos">Mal de dos</option>
+                                            </select>
+                                        </form>
                                     </td>
                                 </tr>
 
-                                <tr>
-                                    <td>
-                                        <div id="InputText_Maladie" style="display: none">
-                                            Autre Maladie:<input type="text" name="Autre_Maladie" placeholder="Autre">
-                                        </div>
-                                    </td>
-                                </tr>
 
                                 <tr>
                                     <th><label>Email : </label></th>

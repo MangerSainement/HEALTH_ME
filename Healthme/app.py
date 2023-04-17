@@ -64,27 +64,30 @@ def inscription():
         pseudo = request.form["Pseudo"]
         sex = request.form["sexe"]
         dtNaissance = request.form["Dt"]
-        intolerance = request.form["intolerance"]
+        # intolerance = request.form["intolerance"]
 
         # Si l'utilisateur choisit "Autres" en 'intolerance'
-        if intolerance == "Autres":
-            intolerance = request.form["Autre_Intolerance"]
-        allergie = request.form['allergie']
-        traitement_maladie = request.form['maladie']
+        # if intolerance == "Autres":
+        #     intolerance = request.form["Autre_Intolerance"]
+        # allergie = request.form['allergie']
+        # traitement_maladie = request.form['maladie']
 
         # Si l'utilisateur choisit "Autres" dans le formulaire
-        if traitement_maladie == "Autres":
-            traitement_maladie = request.form['Autre_Maladie']
+        # if traitement_maladie == "Autres":
+        #     traitement_maladie = request.form['Autre_Maladie']
 
         email = request.form['email']
         motDePass = request.form['motdepass']
+
+        # noveau !
+        symptome = request.form['symptome']
+
 
         # Si l'utilisateur choisit enregistrer ses informations
         enregistrement = request.form['enregistrement']
 
         # Verifier si tous les champs sont remplis
-        if pseudo == "" or sex == "" or dtNaissance == "" or intolerance == "" or allergie == "" or email == "" \
-                or motDePass == "":
+        if pseudo == "" or sex == "" or dtNaissance == "" or email == "" or motDePass == "":
             return render_template("Inscription.html", error="Veuillez remplir tous les champs")
 
         # ------------------------------- Vérification l'adresse email est Unique --------------------------------------
@@ -150,30 +153,49 @@ def inscription():
             """
 
             CodeC = execute_query(query_GetCodeC)
+            CodeC = CodeC[0][0]
 
-            # il faut trouver code de l'aliment dans notre BD
-            query_GetCodeA = f"""
-                select CodeA
-                from ALIMENTS
-                where NOMA = {allergie}
+            # trouver code de l'aliment dans notre BD
+            # query_GetCodeA = f"""
+            #     select CodeA
+            #     from ALIMENTS
+            #     where NOMA = {allergie}
+            # """
+            #
+            # CodeA = execute_query(query_GetCodeA)
+            #
+            # # faire l'insertion d'allergie
+            # query_allergie = f"""
+            #     insert into ALLERGIES(CodeC, CODEA)
+            #     value ({CodeC}, {CodeA})
+            # """
+            #
+            # execute_insert(query_allergie)
+
+            # Cherche le code de le symptome
+            query_CodeS = f"""
+                select CodeS
+                from SYMPTOMES
+                where NOMS = '{symptome}'
             """
 
-            CodeA = execute_query(query_GetCodeA)
+            CodeS = execute_query(query_CodeS)
+            CodeS = CodeS[0][0]
 
-            # faire l'insertion d'allergie
-            query_allergie = f"""
-                insert into ALLERGIES(CodeC, CODEA)
-                value ({CodeC}, {CodeA})
-            """
+            query_Avoir = f"""
+                            insert into AVOIR(CodeC, CodeS)
+                            values ({CodeC}, {CodeS})
+                        """
 
-            execute_insert(query_allergie)
-            
+            execute_insert(query_Avoir)
+
         # selon le type de syptome, chercher le type de recette et chercher le type de aliment
         # -------------------------------------- Session ---------------------------------------------------------------
         # mettre les données dans la session
-        session['intolerance'] = intolerance
-        session['allergie'] = allergie
-        session['traitement_maladie'] = traitement_maladie
+        # session['intolerance'] = intolerance
+        # session['allergie'] = allergie
+        # session['traitement_maladie'] = traitement_maladie
+        session['symptome'] = symptome
         session['email'] = email
         session['pseudo'] = pseudo
 
