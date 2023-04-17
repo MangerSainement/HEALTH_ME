@@ -299,8 +299,13 @@ def page_confirmation():
     return render_template("page_confirmation.html")
 
 @app.route('/aliment_cliquer/<nom>')
-def aliment_cliquer():
-    pass
+def aliment_cliquer(nom):
+    req= execute_query ("select NomA from Aliments ")
+    
+    if nom not in req:
+        return abort(404)
+
+    return render_template("aliment_cliquer.html", nom=nom)
 # run-------------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
     app.run(debug=True)
