@@ -58,7 +58,7 @@ def recette():
     return render_template("recette.html")
 
 
-@app.route("/resultat")
+@app.route('/resultat')
 def resultat():
     return render_template("resultat.html")
 

@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="bb3f3874-aaf0-448f-9e4a-a9359295d9b5" name="变更" comment="4.11 PH">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Healthme/static/images/food/food healthme/photospommes.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/static/images/food/food healthme/photospommes.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/static/images/book-table/shape/01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/static/images/recettes/pancake.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/static/images/recettes/pancake.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/static/sass/sub-stylesheet/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/static/sass/sub-stylesheet/_main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/templates/Aliments.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/Aliments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Healthme/templates/Page_acceuil.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/Page_acceuil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Healthme/templates/recette.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/recette.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Healthme/templates/symptome_cliquer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Healthme/templates/symptome_cliquer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +208,7 @@
       <workItem from="1681552311410" duration="6581000" />
       <workItem from="1681567846916" duration="83000" />
       <workItem from="1681568130986" duration="42554000" />
-      <workItem from="1681763722645" duration="23521000" />
+      <workItem from="1681763722645" duration="29737000" />
     </task>
     <task id="LOCAL-00001" summary="3.28 PH">
       <created>1680020282988</created>
@@ -267,7 +273,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HEALTH_ME$test.coverage" NAME="test 覆盖结果" MODIFIED="1681764199986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme/templates" />
     <SUITE FILE_PATH="coverage/HEALTH_ME$Transformation_Contenir.coverage" NAME="Transformation-Contenir 覆盖结果" MODIFIED="1681596556027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
-    <SUITE FILE_PATH="coverage/HEALTH_ME$app.coverage" NAME="app 覆盖结果" MODIFIED="1681817958454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />
+    <SUITE FILE_PATH="coverage/HEALTH_ME$app.coverage" NAME="app 覆盖结果" MODIFIED="1681824082112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />
     <SUITE FILE_PATH="coverage/HEALTH_ME$Aliments_Traitement.coverage" NAME="Aliments_Traitement 覆盖结果" MODIFIED="1681165012573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
     <SUITE FILE_PATH="coverage/HEALTH_ME$Transformation_csv.coverage" NAME="Transformation-csv 覆盖结果" MODIFIED="1681597014351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Traitement_Donnees" />
     <SUITE FILE_PATH="coverage/HEALTH_ME$test__1_.coverage" NAME="test (1) 覆盖结果" MODIFIED="1681805825839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Healthme" />

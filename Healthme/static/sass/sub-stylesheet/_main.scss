@@ -1101,16 +1101,7 @@
         @include breakpoint(sm) {
             padding: 30px;
         }
-        &::after {
-            @extend %abs;
-            width: 300px;
-            height: 300px;
-            bottom: 0;
-            right: 0;
-            @include breakpoint(xl) {
-                background: url(../../assets/images/book-table/shape/01.png);
-            }
-        }
+
         form {
             @extend %flex;
             @extend %rel;
