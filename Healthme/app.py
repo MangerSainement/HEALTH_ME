@@ -300,14 +300,15 @@ def page_confirmation():
 
 @app.route('/aliment_cliquer/<nom>')
 def aliment_cliquer(nom):
+    #Traduction de l'aliment cliquer du francais vers l'anglais
     translator = Translator(from_lang='french', to_lang='english')
     nom_translation = translator.translate(nom)
-
-    req = execute_query("select NomA from Aliments")
-    if nom_translation not in req[0]:
+    req="select NomA,NomM,NomS,NomR from Aliments A,Mineraux M,Contenir C,Soulager S, Symptomes Sy,Attribute At,Recettes R where A.CodeA=C.CodeA and M.CodeM=C.CodeM and S.CodeM=M.CodeM and Sy.CodeS=S.CodeS and A.CodeA=At.CodeA and At.CodeR=R.CodeR"
+    exec_req = execute_query(req)
+    if nom_translation not in exec_req[0]:
         return abort(404)
 
-    return render_template("aliment_cliquer.html", nom=nom)
+    return render_template("aliment_cliquer.html", nom=nom,tuple_min=exec_req[1],symptome=exec_req[2],tuple_rec=exec_req[3])
 
 
 @app.route('/logout')
