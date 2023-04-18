@@ -103,19 +103,19 @@
                                 <td>
                                     <form>
                                         <select name="symptome" id="symptomes">
-                                            <option value="mal_de_tete">Mal de tête</option>
-                                            <option value="fievre">Fièvre</option>
-                                            <option value="mal_de_gorge">Mal de gorge</option>
-                                            <option value="diarrhee">Diarrhée</option>
-                                            <option value="constipation">Constipation</option>
-                                            <option value="palpitations">Palpitations</option>
-                                            <option value="difficultes_respiratoires">Difficultés respiratoires</option>
-                                            <option value="nez_bouche">Nez bouché</option>
-                                            <option value="douleur_articulaire">Douleur articulaire</option>
-                                            <option value="fatigue">Fatigue</option>
-                                            <option value="douleur_abdominale">Douleur abdominale</option>
-                                            <option value="ecoulement_nasal">Écoulement nasal</option>
-                                            <option value="mal_de_dos">Mal de dos</option>
+                                            <option value="Mal de tête">Mal de tête</option>
+                                            <option value="Fièvre">Fièvre</option>
+                                            <option value="Mal de gorge">Mal de gorge</option>
+                                            <option value="Diarrhée">Diarrhée</option>
+                                            <option value="Constipation">Constipation</option>
+                                            <option value="Palpitations">Palpitations</option>
+                                            <option value="Difficultés respiratoires">Difficultés respiratoires</option>
+                                            <option value="Nez bouché">Nez bouché</option>
+                                            <option value="Douleur articulaire">Douleur articulaire</option>
+                                            <option value="Fatigue">Fatigue</option>
+                                            <option value="Douleur abdominale">Douleur abdominale</option>
+                                            <option value="Écoulement nasal">Écoulement nasal</option>
+                                            <option value="Mal de dos">Mal de dos</option>
                                         </select>
                                     </form>
                                 </td>
@@ -138,13 +138,26 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2"><input type="checkbox" required>
-                                    <label>J'enregistre mes données.</label>
+                                <td colspan="2">
+                                    <input type="checkbox" name="enregistrement" value="oui"><label>J'enregistre mes données.</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <button type="submit" class="food-btn style-2"><span>CREER</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                    <ul class="messages">
+                                        {% for message in messages %}
+                                        <li>{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                    {% endwith %}
                                 </td>
                             </tr>
                         </table>
