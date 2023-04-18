@@ -949,6 +949,7 @@ button:focus {
     left: 100%;
     top: 50%;
     transform: translateY(-50%);
+    background: url(../images/service/shape/01.png);
     background-repeat: no-repeat;
   }
 }
@@ -3359,10 +3360,13 @@ button:focus {
   right: 0;
 }
 @media (min-width: 1200px) {
-  .booking-table .section-wrapper form {
+  .booking-table .section-wrapper::after {
+    background: url(../images/book-table/shape/01.png);
+  }
+}
+.booking-table .section-wrapper form {
   justify-content: space-between;
   z-index: 1;
-  }
 }
 .booking-table .section-wrapper form input {
   width: 100%;

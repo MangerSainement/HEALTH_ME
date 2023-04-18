@@ -1,19 +1,4 @@
 {% extends "base.html" %}
 {% block body_content %}
-<p>Les {{nom}} sont des aliments riche en :</p>
-<br>
-<ul>
-    {% for min in tuple_min %}
-    <li>{{min}}</li>
-    {% endfor %}
-</ul>
-<p>Les diverses propriétés des {{nom}} peuvent vous aider à soulager les symptomes suivants : {{symptome}}</p>
-<p>Health me ! vous propose des recettes délicieuses à base des {{nom}} :</p>
-<br>
-<ul>
-    {% for recette in tuple_rec %}
-    <li>{{recette}}</li>
-    {% endfor %}
-</ul>
 
 {% endblock %}
