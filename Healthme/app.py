@@ -63,6 +63,11 @@ def resultat():
     return render_template("resultat.html")
 
 
+@app.route("/aliment&recette")
+def cliquer_symptome():
+    return render_template("symptome_cliquer.html")
+
+
 @app.route('/Inscription', methods=["POST", "GET"])
 def inscription():
     # recuperer des info de utlisateur
