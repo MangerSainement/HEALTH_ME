@@ -294,8 +294,8 @@ def page_confirmation():
                                liste=liste_Aliment_recommandation,
                                liste2=liste_Besoin_Mineraux,
                                symptome=symptome)
-
-    return render_template("page_confirmation.html")
+        message = "Vous vous êtes inscrit avec succès à un compte !"
+    return render_template("page_confirmation.html", message = message)
 
 
 @app.route('/aliment_cliquer/<nom>')
@@ -350,8 +350,8 @@ def monCompte():
             session['motdepass'] = nouveau_mdp
             #mise à jour du mot de passe dans la base de données
             #alter/insert query remplacer les données dans la base de données
-        
-        return redirect(url_for('/confirmation'))
+        message = "Les modifications apportées ont été enregistré avec succès à votre compte !"
+        return redirect(url_for('/confirmation', message = message))
 
     return render_template('Page_MonCompte.html', info=infoCLI_dict)
 
