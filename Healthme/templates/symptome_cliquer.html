@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block body_content %}
+		<!-- Popular Food Section Start Here -->
+		<section class="popular-foods padding-tb style-2">
+            <div class="container">
+							<div class="section-header">
+                <div class="section-wrapper">
+									<h5>Les aliments qui luttent contre les maux de tête</h5>
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="p-food-item">
+                                <div class="p-food-inner">
+                                    <div class="p-food-thumb">
+                                        <img src="../static/images/recettes/epinards.jpg" alt="p-food">
+                                    </div>
+                                    <div class="p-food-content">
+                                        <h6><a href="{{ url_for('aliment_cliquer', nom='Epinards') }}">Epinards</a></h6>
+                                        <div class="p-food-group">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="p-food-item">
+                                <div class="p-food-inner">
+                                    <div class="p-food-thumb">
+                                        <img src="../static/images/recettes/poisson.jpg" alt="p-food">
+                                    </div>
+                                    <div class="p-food-content">
+                                        <h6><a href="{{ url_for('aliment_cliquer', nom='Poisson') }}">Poisson</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="p-food-item">
+                                <div class="p-food-inner">
+                                    <div class="p-food-thumb">
+                                        <img src="../static/images/recettes/ginger.jpg" alt="p-food">
+                                    </div>
+                                    <div class="p-food-content">
+                                        <h6><a href="{{ url_for('aliment_cliquer', nom='Gingembre') }}">Gingembre</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Popular Food Section Ending Here -->
+
+{% endblock %}

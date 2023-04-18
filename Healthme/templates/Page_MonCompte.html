@@ -14,7 +14,7 @@ Mon compte
 <section class="booking-table padding-tb" style="background: #fffaf4;">
     <div class="container">
         <div class="section-header">
-            <h2>Bienvenue sur votre profil {{Pseudo_actuel}}</h2>
+            <h2>Bienvenue sur votre profil {{info['pseudo']}}</h2>
         </div>
         <div class="section-wrapper">
             <div class="row justify-content-center align-items-center">
@@ -23,18 +23,18 @@ Mon compte
                         <table style="width: 100%; ">
                             <tr>
                                 <th>
-                                    Votre pseudo : {{Pseudo_actuel}}
+                                    Informations de {{info['pseudo']}} : genre {{info['genre']}}, date de naissance {{info['DTNaissance']}}
                                 </th>
                                 <th>
-                                    Votre mail : {{Mail_actuel}}
+                                    Votre mail : {{info['mail']}}
                                 </th>
                                 <th>
                                     <p class="visible">Votre mot de passe actuel : </p>
-	                                <p class="hidden">{{MDP_actuel}}</p>
+	                                <p class="hidden">{{info[motdepass]}}</p>
                                 </th>
                             </tr>
                             <tr>
-                                <thead>Il vous est possible de les modifier</thead>
+                                <thead>Il vous est possible de modifier votre pseudo et mot de passe !</thead>
                             </tr>
                             <tr>
                                 <th><label>Changer de Pseudo : </label></th>
@@ -44,10 +44,6 @@ Mon compte
                                     style="text-align: center; width:100%; padding:0px;"
                                     required/>
                                 </td>
-                            </tr>
-                            <tr>
-                                <th><label>Changer d'Email : </label></th>
-                                <td style="text-align: center;"><input name="email" type="email" placeholder="Inserer votre mail" style="text-align: center; width:100%; padding:0px;" required></td>
                             </tr>
                             <tr>
                                 <th><label>Changer de Mot de passe : </label></th>

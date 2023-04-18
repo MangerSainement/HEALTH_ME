@@ -63,6 +63,11 @@ def resultat():
     return render_template("resultat.html")
 
 
+@app.route("/aliment&recette")
+def cliquer_symptome():
+    return render_template("symptome_cliquer.html")
+
+
 @app.route('/Inscription', methods=["POST", "GET"])
 def inscription():
     # recuperer des info de utlisateur
@@ -292,36 +297,6 @@ def page_confirmation():
 
     return render_template("page_confirmation.html")
 
-@app.route('/mon_compte', methods=['POST','GET'])
-def affichage_profil() :
-#Bienfait je te laisse faire les query 
-    
-    if 'pseudo' not in session :
-        return redirect(url_for('/connecter'))
-    #vérification si utilisateur déjà connecté
-    #query pour récupérer le pseudo, MDP et mail
-    
-    if request.method == 'POST':
-        if request.form["nouveau_pseudo"] != '':
-            nouveau_pseudo = request.form['nouveau_pseudo']
-            #mise à jour du pseudo dans la base de données
-            #insert query
-            session['pseudo'] = nouveau_pseudo
-        elif request.form['nouveau_mail'] != '':
-            nouveau_mail = request.form['nouveau_mail']
-            session['email'] = nouveau_mail
-            #mise à jour du mail dans la base de données
-            #insert query
-        elif request.form['nouveau_MDP'] != '':
-            nouveau_mdp = request.form['nouveau_MDP']
-            session['motdepass'] = nouveau_mdp
-            #mise à jour du mot de passe dans la base de données
-            #insert query
-        
-        return redirect(url_for('/confirmation'))
-
-    return render_template('Page_MonCompte.html')
-
 
 @app.route('/aliment_cliquer/<nom>')
 def aliment_cliquer(nom):
@@ -360,13 +335,29 @@ def monCompte():
     infoCLI_dict = {
         "CodeCli": infoCli[0],
         "Pseudo": infoCli[1],
-        "gendre": infoCli[2],
+        "genre": infoCli[2],
         "DtNaissance": infoCli[3].strftime('%d-%m-%Y'),  # 格式化日期
         "email": infoCli[4],
     }
 
+    if request.method == 'POST':
+        if request.form["nouveau_pseudo"] != '':
+            nouveau_pseudo = request.form['nouveau_pseudo']
+            #mise à jour du pseudo dans la base de données
+            #alter/insert query remplacer les données dans la base de données
+            session['pseudo'] = nouveau_pseudo
+        elif request.form['nouveau_MDP'] != '':
+            nouveau_mdp = request.form['nouveau_MDP']
+            session['motdepass'] = nouveau_mdp
+            #mise à jour du mot de passe dans la base de données
+            #alter/insert query remplacer les données dans la base de données
+        
+        return redirect(url_for('/confirmation'))
+
     return render_template('Page_MonCompte.html', info=infoCLI_dict)
 
+    
+    
 
 #  run -----------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
