@@ -80,6 +80,15 @@
         .dropdown:hover .dropdown-toggle {
             background-color: #45a049;
         }
+
+        .hidden {
+			visibility: hidden;
+		}
+		
+		.visible:hover + .hidden {
+			visibility: visible;
+		}
+        
     </style>
 </head>
 
@@ -178,7 +187,7 @@
                                             {% endif %}
                                         </button>
                                         <div class="dropdown-content">
-                                            <a href="#">Mon compte</a>
+                                            <a href="/mon_compte">Mon compte</a>
                                             <a href="/logout">Se deconnecter</a>
                                         </div>
                                     </div>

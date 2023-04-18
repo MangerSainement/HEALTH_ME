@@ -5,11 +5,65 @@
 
 <!-- Block contenu_title-->
 {% block body_title %}
-
+Mon compte
 {% endblock %}
 
 <!-- Block contenu -->
 <!-- Il suffit d'afficher toutes les informations contenues dans la base de données-->
 {% block body_content %}
-
+<section class="booking-table padding-tb" style="background: #fffaf4;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Bienvenue sur votre profil {{Pseudo_actuel}}</h2>
+        </div>
+        <div class="section-wrapper">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 col-12">
+                    <div class="contact-form">
+                        <table style="width: 100%; ">
+                            <tr>
+                                <th>
+                                    Votre pseudo : {{Pseudo_actuel}}
+                                </th>
+                                <th>
+                                    Votre mail : {{Mail_actuel}}
+                                </th>
+                                <th>
+                                    <p class="visible">Votre mot de passe actuel : </p>
+	                                <p class="hidden">{{MDP_actuel}}</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <thead>Il vous est possible de les modifier</thead>
+                            </tr>
+                            <tr>
+                                <th><label>Changer de Pseudo : </label></th>
+                                <td style="text-align: center;">
+                                    <input type="text" name="Pseudo"
+                                    placeholder="Veuillez indiquer un pseudo"
+                                    style="text-align: center; width:100%; padding:0px;"
+                                    required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label>Changer d'Email : </label></th>
+                                <td style="text-align: center;"><input name="email" type="email" placeholder="Inserer votre mail" style="text-align: center; width:100%; padding:0px;" required></td>
+                            </tr>
+                            <tr>
+                                <th><label>Changer de Mot de passe : </label></th>
+                                <td style="text-align: center;"><input name="motdepass" type="password" placeholder="Inserer un mot de passe valable" style="text-align: center; width:100%; padding:0px;" required/></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="submit" class="food-btn style-2"><span>Connection</span></button>
+                                </td>
+                            </tr>											
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Booking Table Section Ending Here -->
 {% endblock %}
