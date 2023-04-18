@@ -254,7 +254,6 @@ def check_user_credentials(email, password):
 
 @app.route('/confirmation', methods=['GET', 'POST'])
 def page_confirmation():
-
     if request.method == 'POST':
 
         # Recuperer de l'info d'utlisateur de la session
@@ -295,12 +294,11 @@ def page_confirmation():
             liste_Aliment_recommandation.append(resultat1[0][1])
 
         return render_template('Page_personnalisée.html',
-                                   liste=liste_Aliment_recommandation,
-                                   liste2=liste_Besoin_Mineraux,
-                                   symptome=symptome)
+                               liste=liste_Aliment_recommandation,
+                               liste2=liste_Besoin_Mineraux,
+                               symptome=symptome)
 
     return render_template("page_confirmation.html")
-
 
 
 @app.route('/aliment_cliquer/<nom>')
@@ -323,30 +321,12 @@ def logout():
     return redirect(url_for('page_acceuil'))
 
 
-@app.route('/monCompte')
+@app.route('/monCompte', methods=['GET', 'POST'])
 def monCompte():
-    if session['email']:
-        email = session['email']
-
-        query_infoCLi = f"""
-               select CODEC, PSEUDO, SEXE, DATEANNIVERSAIEC, EMAILC
-               from CLIENT
-               where EMAILC = '{email}'
-           """
-
-        infoCli = execute_query(query_infoCLi)
-        infoCli = infoCli[0]
-
-        infoCLI_dict = {
-            "CodeCli": infoCli[0],
-            "Pseudo": infoCli[1],
-            "gendre": infoCli[2],
-            "DtNaissance": infoCli[3].strftime('%d-%m-%Y'),
-            "email": infoCli[4],
-        }
-
     if request.method == 'POST':
-        email = session['emai']
+        email = session['email']
+        message = ""
+        message_MDP = ""
         if request.form["nouveau_pseudo"] != '':
             nouveau_pseudo = request.form['nouveau_pseudo']
             # mise à jour du pseudo dans la base de données
@@ -354,7 +334,7 @@ def monCompte():
             query_pseudo_changement = f"""
                 update CLIENT
                 set PSEUDO = '{nouveau_pseudo}'
-                where EMAILC = '{email}'     
+                where EMAILC = '{email}'
              """
 
             execute_insert(query_pseudo_changement)
@@ -374,7 +354,7 @@ def monCompte():
             else:
                 message = 'Veuillez réessayer !'
 
-        elif request.form['nouveau_MDP'] != '':
+        if request.form['nouveau_MDP'] != '':
             nouveau_mdp = request.form['nouveau_MDP']
             session['motdepass'] = nouveau_mdp
             # mise à jour du mot de passe dans la base de données
@@ -394,7 +374,7 @@ def monCompte():
             query_MDP_changement = f"""
                 update CLIENT
                 set MOTDEPASSE = '{hashed_password}', STORED_SALT = '{salt}'
-                where EMAILC = '{email}'  
+                where EMAILC = '{email}'
             """
 
             execute_insert(query_MDP_changement)
@@ -414,7 +394,36 @@ def monCompte():
 
         return render_template('Page_confirmation_changement.html', message_MDP=message_MDP, message=message)
 
-    return render_template('Page_MonCompte.html', info=infoCLI_dict)
+    if session['email']:
+        email = session['email']
+
+        query_infoCLi = f"""
+               select CODEC, PSEUDO, SEXE, DATEANNIVERSAIEC, EMAILC
+               from CLIENT
+               where EMAILC = '{email}'
+           """
+
+        infoCli = execute_query(query_infoCLi)
+        infoCli = infoCli[0]
+        dt_str = infoCli[3].strftime('%d-%m-%Y')
+
+        print(dt_str)
+
+        infoCLI_dict = {
+            "CodeCli": infoCli[0],
+            "Pseudo": infoCli[1],
+            "gendre": infoCli[2],
+            "email": infoCli[4],
+        }
+
+        print(infoCLI_dict)
+
+    return render_template('Page_MonCompte.html', info=infoCLI_dict, dt=dt_str)
+
+
+@app.route('/Page_confirmation_changement', methods=['GET', 'POST'])
+def ConfirmationChangement():
+    return render_template('Page_confirmation_changement.html')
 
 
 #  run -----------------------------------------------------------------------------------------------------------------

@@ -13,53 +13,61 @@
 {% block body_content %}
 <section class="booking-table padding-tb" style="background: #fffaf4;">
     <div class="container">
-        <div class="section-header">
-            <h2>Bienvenue sur votre profil {{info['pseudo']}}</h2>
-        </div>
-        <div class="section-wrapper">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-6 col-12">
-                    <div class="contact-form">
-                        <table style="width: 100%; ">
+    <div class="section-header">
+        <h2>Bienvenue sur votre profil {{ info['pseudo'] }}</h2>
+    </div>
+    <div class="section-wrapper">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6 col-12">
+                <div class="contact-form">
+                    <form action="" method="post">
+                        <table style="width: 100%;">
                             <tr>
                                 <th>
-                                    Informations de {{info['pseudo']}} : genre {{info['genre']}}, date de naissance {{info['DTNaissance']}}
+                                    Informations de {{ info['Pseudo'] }} :<br />
+                                    genre {{ info['gendre'] }},<br />
+                                    date de naissance {{ dt }}
                                 </th>
                                 <th>
-                                    Votre mail : {{info['mail']}}
-                                </th>
-                                <th>
-                                    <p class="visible">Votre mot de passe actuel : </p>
-	                                <p class="hidden">{{info[motdepass]}}</p>
+                                    Votre mail : {{ info['email'] }}
                                 </th>
                             </tr>
                             <tr>
-                                <thead>Il vous est possible de modifier votre pseudo et mot de passe !</thead>
-                            </tr>
-                            <tr>
-                                <th><label>Changer de Pseudo : </label></th>
+                                <th>
+                                    <label>Changer de Pseudo :</label>
+                                </th>
                                 <td style="text-align: center;">
-                                    <input type="text" name="Pseudo"
-                                    placeholder="Veuillez indiquer un pseudo"
-                                    style="text-align: center; width:100%; padding:0px;"
-                                    required/>
+                                    <input type="text"
+                                           name="nouveau_pseudo"
+                                           placeholder="Veuillez indiquer un pseudo"
+                                           style="text-align: center; width:100%; padding:0px;"
+                                    />
                                 </td>
                             </tr>
                             <tr>
-                                <th><label>Changer de Mot de passe : </label></th>
-                                <td style="text-align: center;"><input name="motdepass" type="password" placeholder="Inserer un mot de passe valable" style="text-align: center; width:100%; padding:0px;" required/></td>
+                                <th>
+                                    <label>Changer de Mot de passe :</label>
+                                </th>
+                                <td style="text-align: center;">
+                                    <input name="nouveau_MDP"
+                                           type="password"
+                                           placeholder="Inserer un mot de passe valable"
+                                           style="text-align: center; width:100%; padding:0px;"
+                                    />
+                                </td>
                             </tr>
                             <tr>
                                 <td>
                                     <button type="submit" class="food-btn style-2"><span>Modification</span></button>
                                 </td>
-                            </tr>											
+                            </tr>
                         </table>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </section>
 <!-- Booking Table Section Ending Here -->
 {% endblock %}
