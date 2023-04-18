@@ -80,6 +80,15 @@
         .dropdown:hover .dropdown-toggle {
             background-color: #45a049;
         }
+
+        .hidden {
+			visibility: hidden;
+		}
+		
+		.visible:hover + .hidden {
+			visibility: visible;
+		}
+        
     </style>
 </head>
 
@@ -115,7 +124,7 @@
             <div class="mobile-menu-area-inner" id="scrollbar">
                 <div class="mobile-search">
                     <input type="text" placeholder="Recherche...">
-                    <button type="submit"><i class="icofont-search-2"></i></button>
+                    <button type="submit"><a href="/resultat"><i class="icofont-search-2"></i></a></button>
                 </div>
                 <ul>
                     <li><a href="/">Accueil</a></li>
@@ -147,7 +156,7 @@
                     <div class="widget-search">
                         <form method="get">
                             <input type="text" placeholder="Recherche..." name="s">
-                            <button type="submit"><i class="icofont-search-2"></i></button>
+                            <button type="submit"><a href="/resultat"><i class="icofont-search-2"></i></a></button>
                         </form>
                     </div>
                 </div>

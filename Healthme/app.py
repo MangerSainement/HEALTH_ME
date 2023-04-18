@@ -292,6 +292,36 @@ def page_confirmation():
 
     return render_template("page_confirmation.html")
 
+@app.route('/mon_compte', methods=['POST','GET'])
+def affichage_profil() :
+#Bienfait je te laisse faire les query 
+    
+    if 'pseudo' not in session :
+        return redirect(url_for('/connecter'))
+    #vérification si utilisateur déjà connecté
+    #query pour récupérer le pseudo, MDP et mail
+    
+    if request.method == 'POST':
+        if request.form["nouveau_pseudo"] != '':
+            nouveau_pseudo = request.form['nouveau_pseudo']
+            #mise à jour du pseudo dans la base de données
+            #insert query
+            session['pseudo'] = nouveau_pseudo
+        elif request.form['nouveau_mail'] != '':
+            nouveau_mail = request.form['nouveau_mail']
+            session['email'] = nouveau_mail
+            #mise à jour du mail dans la base de données
+            #insert query
+        elif request.form['nouveau_MDP'] != '':
+            nouveau_mdp = request.form['nouveau_MDP']
+            session['motdepass'] = nouveau_mdp
+            #mise à jour du mot de passe dans la base de données
+            #insert query
+        
+        return redirect(url_for('/confirmation'))
+
+    return render_template('Page_MonCompte.html', Pseudo_actuel = ?, Mail_actuel = ?, MDP_actuel = ?)
+
 
 @app.route('/aliment_cliquer/<nom>')
 def aliment_cliquer(nom):
