@@ -81,7 +81,12 @@ def inscription():
 
         # noveau !
         symptome = request.form['symptome']
-        print(symptome)
+        # print(symptome)
+        # print(pseudo)
+        # print(sex)
+        # print(dtNaissance)
+        # print(email)
+        # print(motDePass)
 
         # Si l'utilisateur choisit enregistrer ses informations
         enregistrement = request.form['enregistrement']
@@ -167,13 +172,12 @@ def inscription():
                         """
 
             execute_insert(query_Avoir)
+            print('OK')
 
         # selon le type de syptome, chercher le type de recette et chercher le type de aliment
         # -------------------------------------- Session ---------------------------------------------------------------
         # mettre les données dans la session
-        # session['intolerance'] = intolerance
-        # session['allergie'] = allergie
-        # session['traitement_maladie'] = traitement_maladie
+        print(symptome)
         session['symptome'] = symptome
         session['email'] = email
         session['pseudo'] = pseudo
@@ -250,11 +254,11 @@ def check_user_credentials(email, password):
 
 @app.route('/confirmation', methods=['GET', 'POST'])
 def page_confirmation():
+
     if request.method == 'POST':
 
         # Recuperer de l'info d'utlisateur de la session
-        if 'symptome' in session:
-            symptome = session['symptome']
+        symptome = session['symptome']
 
         # -------------------------------------- Interroger sur la base ------------------------------------------------
         # Chercher le type de recette et le type d'aliment sur la base de données
@@ -291,37 +295,12 @@ def page_confirmation():
             liste_Aliment_recommandation.append(resultat1[0][1])
 
         return render_template('Page_personnalisée.html',
-                               liste=liste_Aliment_recommandation,
-                               liste2=liste_Besoin_Mineraux,
-                               symptome=symptome)
+                                   liste=liste_Aliment_recommandation,
+                                   liste2=liste_Besoin_Mineraux,
+                                   symptome=symptome)
 
     return render_template("page_confirmation.html")
 
-# @app.route('/mon_compte', methods=['POST','GET'])
-# def affichage_profil() :
-# #Bienfait je te laisse faire les query
-#
-#     if 'pseudo' not in session :
-#         return redirect(url_for('/connecter'))
-#     #vérification si utilisateur déjà connecté
-#     #query pour récupérer le pseudo, MDP et mail
-#
-#     if request.method == 'POST':
-#         if request.form["nouveau_pseudo"] != '':
-#             nouveau_pseudo = request.form['nouveau_pseudo']
-#             session['pseudo'] = nouveau_pseudo
-#
-#         elif request.form['nouveau_mail'] != '':
-#             nouveau_mail = request.form['nouveau_mail']
-#             session['email'] = nouveau_mail
-#
-#         elif request.form['nouveau_MDP'] != '':
-#             nouveau_mdp = request.form['nouveau_MDP']
-#             session['motdepass'] = nouveau_mdp
-#
-#         return redirect(url_for('/confirmation'))
-#
-#     return render_template('Page_MonCompte.html', Pseudo_actuel = ?, Mail_actuel = ?, MDP_actuel = ?)
 
 
 @app.route('/aliment_cliquer/<nom>')
@@ -340,6 +319,7 @@ def aliment_cliquer(nom):
 def logout():
     session.pop('email', None)
     session.pop('pseudo', None)
+    session.pop('symptome', None)
     return redirect(url_for('page_acceuil'))
 
 
@@ -366,23 +346,76 @@ def monCompte():
         }
 
     if request.method == 'POST':
+        email = session['emai']
         if request.form["nouveau_pseudo"] != '':
             nouveau_pseudo = request.form['nouveau_pseudo']
-            #mise à jour du pseudo dans la base de données
-            #alter/insert query remplacer les données dans la base de données
-            session['pseudo'] = nouveau_pseudo
+            # mise à jour du pseudo dans la base de données
+            # alter/insert query remplacer les données dans la base de données
+            query_pseudo_changement = f"""
+                update CLIENT
+                set PSEUDO = '{nouveau_pseudo}'
+                where EMAILC = '{email}'     
+             """
+
+            execute_insert(query_pseudo_changement)
+
+            # verification nouveau_pseudo
+            query_pseudo_verification = f"""
+                select PSEUDO
+                from CLIENT
+                where EMAILC = '{email}'
+            """
+
+            res_verification = execute_query(query_pseudo_verification)
+
+            if res_verification[0][0] == nouveau_pseudo:
+                message = 'Votre pseudo a été modifié !'
+                session['pseudo'] = nouveau_pseudo
+            else:
+                message = 'Veuillez réessayer !'
+
         elif request.form['nouveau_MDP'] != '':
             nouveau_mdp = request.form['nouveau_MDP']
             session['motdepass'] = nouveau_mdp
-            #mise à jour du mot de passe dans la base de données
-            #alter/insert query remplacer les données dans la base de données
-        
-        return redirect(url_for('/confirmation'))
+            # mise à jour du mot de passe dans la base de données
+            # alter/insert query remplacer les données dans la base de données
+
+            # creer "salt"
+            salt = bcrypt.gensalt()
+
+            # crypter le mot de passe
+            hashed_password = bcrypt.hashpw(nouveau_mdp.encode('utf-8'), salt)
+
+            # Conversion de chaînes binaires en chaînes
+            hashed_password = hashed_password.decode('utf-8')
+            salt = salt.decode('utf-8')
+
+            # Update password
+            query_MDP_changement = f"""
+                update CLIENT
+                set MOTDEPASSE = '{hashed_password}', STORED_SALT = '{salt}'
+                where EMAILC = '{email}'  
+            """
+
+            execute_insert(query_MDP_changement)
+
+            # verification MDP
+            query_MDP_verification = f"""
+                select MOTDEPASSE
+                from CLIENT
+                where EMAILC = '{email}'
+            """
+
+            res_MDP_verification = execute_query(query_MDP_verification)
+            if res_MDP_verification[0][0] == hashed_password:
+                message_MDP = 'Votre mot de pass a été modifié !'
+            else:
+                message_MDP = 'Veuillez réessayer de changer mot de pass !'
+
+        return render_template('Page_confirmation_changement.html', message_MDP=message_MDP, message=message)
 
     return render_template('Page_MonCompte.html', info=infoCLI_dict)
 
-    
-    
 
 #  run -----------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':

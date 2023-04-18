@@ -1,3 +1,4 @@
+import bcrypt
 import cx_Oracle
 
 
@@ -112,22 +113,79 @@ def execute_insert(query):
 # res111 = execute_query(query2)
 # print(res111[0][1])
 
-email = 'superf@gmail.com'
-query_infoCLi = f"""
-       select CODEC, PSEUDO, SEXE, DATEANNIVERSAIEC, EMAILC
-       from CLIENT
-       where EMAILC = '{email}'
-   """
+# email = 'superf@gmail.com'
+# query_infoCLi = f"""
+#        select CODEC, PSEUDO, SEXE, DATEANNIVERSAIEC, EMAILC
+#        from CLIENT
+#        where EMAILC = '{email}'
+#    """
+#
+# infoCli = execute_query(query_infoCLi)
+# infoCli = infoCli[0]
+#
+# infoCLI_dict = {
+#     "CodeCli": infoCli[0],
+#     "Pseudo": infoCli[1],
+#     "gendre": infoCli[2],
+#     "DtNaissance": infoCli[3].strftime('%d-%m-%Y'),  # 格式化日期
+#     "email": infoCli[4],
+# }
+#
+# print(infoCLI_dict)
 
-infoCli = execute_query(query_infoCLi)
-infoCli = infoCli[0]
+# nouveau_pseudo = 'PH007'
+# email = 'dssdfsdf@gmail.com'
+# query_pseudo_changement = f"""
+#                 update CLIENT
+#                 set PSEUDO = '{nouveau_pseudo}'
+#                 where EMAILC = '{email}'
+#              """
+#
+# execute_insert(query_pseudo_changement)
+#
+# query_pseudo_verification = f"""
+#                 select PSEUDO
+#                 from CLIENT
+#                 where EMAILC = '{email}'
+#             """
+#
+# res_verification = execute_query(query_pseudo_verification)
+#
+# print(res_verification)
 
-infoCLI_dict = {
-    "CodeCli": infoCli[0],
-    "Pseudo": infoCli[1],
-    "gendre": infoCli[2],
-    "DtNaissance": infoCli[3].strftime('%d-%m-%Y'),  # 格式化日期
-    "email": infoCli[4],
-}
+nouveau_mdp = '123456'
+email = '123456@gmail.com'
 
-print(infoCLI_dict)
+# creer "salt"
+salt = bcrypt.gensalt()
+
+# crypter le mot de passe
+hashed_password = bcrypt.hashpw(nouveau_mdp.encode('utf-8'), salt)
+
+# Conversion de chaînes binaires en chaînes
+hashed_password = hashed_password.decode('utf-8')
+salt = salt.decode('utf-8')
+
+# Update password
+query_MDP_changement = f"""
+    update CLIENT
+    set MOTDEPASSE = '{hashed_password}', STORED_SALT = '{salt}'
+    where EMAILC = '{email}'  
+"""
+
+execute_insert(query_MDP_changement)
+
+# verification MDP
+query_MDP_verification = f"""
+    select MOTDEPASSE
+    from CLIENT
+    where EMAILC = '{email}'
+"""
+
+res_MDP_verification = execute_query(query_MDP_verification)
+if res_MDP_verification[0][0] == hashed_password:
+    message_MDP = 'Votre mot de pass a été modifié !'
+else:
+    message_MDP = 'Veuillez réessayer de changer mot de pass !'
+
+print(message_MDP)
