@@ -857,7 +857,6 @@ button:focus {
   z-index: 99999999;
   -webkit-animation: slideInDown 0.4s forwards;
   animation: slideInDown 0.4s forwards;
-  overflow-y: scroll;
   background: #000;
 }
 .modal .modal-dialog .modal-content button.close {
@@ -2460,7 +2459,6 @@ button:focus {
   transform: scaleY(0);
   transform-origin: top;
   height: 100vh;
-  overflow-y: scroll;
   padding: 0 20px;
   padding-bottom: 60px;
   -webkit-transition: all 0.3s ease;
@@ -4068,7 +4066,6 @@ button:focus {
   height: 50px;
   width: 50px;
   border-radius: 100%;
-  overflow: hidden;
   margin-right: 15px;
   float: left;
 }
@@ -4132,7 +4129,6 @@ button:focus {
 }
 .blog-section.blog-single .section-wrapper .comments .comment-list .comment .comment-list .comment, .recepi-single.blog-single .section-wrapper .comments .comment-list .comment .comment-list .comment {
   list-style: none;
-  overflow: hidden;
   border-bottom: 1px solid #dbdbdb;
   padding: 20px 0px;
 }
