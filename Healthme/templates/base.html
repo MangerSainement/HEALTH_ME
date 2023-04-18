@@ -80,6 +80,15 @@
         .dropdown:hover .dropdown-toggle {
             background-color: #45a049;
         }
+
+        .hidden {
+			visibility: hidden;
+		}
+		
+		.visible:hover + .hidden {
+			visibility: visible;
+		}
+        
     </style>
 </head>
 
@@ -173,7 +182,11 @@
                                             {% endif %}
                                         </button>
                                         <div class="dropdown-content">
-                                            <a href="#">Mon compte</a>
+                                            {% if session['pseudo'] %}
+                                                <a href="{{ url_for('monCompte') }}">Mon compte</a>
+                                            {% else %}
+                                                <a href="{{ url_for('connecter') }}">Mon compte</a>
+                                            {% endif %}
                                             <a href="/logout">Se deconnecter</a>
                                         </div>
                                     </div>

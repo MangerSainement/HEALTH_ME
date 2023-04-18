@@ -1,4 +1,3 @@
-import base64
 from datetime import datetime
 from translate import Translator
 
@@ -76,24 +75,13 @@ def inscription():
         pseudo = request.form["Pseudo"]
         sex = request.form["sexe"]
         dtNaissance = request.form["Dt"]
-        # intolerance = request.form["intolerance"]
-
-        # Si l'utilisateur choisit "Autres" en 'intolerance'
-        # if intolerance == "Autres":
-        #     intolerance = request.form["Autre_Intolerance"]
-        # allergie = request.form['allergie']
-        # traitement_maladie = request.form['maladie']
-
-        # Si l'utilisateur choisit "Autres" dans le formulaire
-        # if traitement_maladie == "Autres":
-        #     traitement_maladie = request.form['Autre_Maladie']
 
         email = request.form['email']
         motDePass = request.form['motdepass']
 
         # noveau !
         symptome = request.form['symptome']
-
+        print(symptome)
 
         # Si l'utilisateur choisit enregistrer ses informations
         enregistrement = request.form['enregistrement']
@@ -113,11 +101,12 @@ def inscription():
         """
 
         res_query_existant = execute_query(query_existant)
+        print(res_query_existant)
         # --------------------------------- Flash Messaging System ---------------------------------------------------
         # On utilise Flash pour rendre un message dans le page inscription.
         if res_query_existant:
             flash('Cette adresse e-mail est déjà enregistrée.')
-            return redirect('/inscription.html')
+            return redirect('/inscription')
         # [Manque] HTML code - block pour recevoir ce message
         # <...>
 
@@ -129,25 +118,19 @@ def inscription():
         # Stocker l'utilisateur dans la base de données'
         # si l'utilisateur choisit "enregistrement", on enregistre ses informations dans la base de donnees
         # avant l‘insertion, on crypte le mot de passe en utilisant la fonction "Salted Hash" -- (RGPD)
+        print("enregistrement :" + enregistrement)
         if enregistrement == "oui":
             # creer "salt"
             salt = bcrypt.gensalt()
-            # print(salt)
 
             # crypter le mot de passe
             hashed_password = bcrypt.hashpw(motDePass.encode('utf-8'), salt)
-            # print(hashed_password)
 
             dtNaissance = datetime.strptime(dtNaissance, '%Y-%m-%d')
             dtNaissance = dtNaissance.strftime('%d/%m/%Y')
-            # print(dtNaissance)
 
             hashed_password = hashed_password.decode('utf-8')
             salt = salt.decode('utf-8')
-            # print(hashed_password)
-            # print(salt)
-            # print(11111)
-            # print(sex)
 
             query_insert = f"""
                 insert into Client (Pseudo, Sexe, DateAnniversaieC, EmailC, MOTDEPASSE, STORED_SALT)
@@ -167,23 +150,6 @@ def inscription():
             CodeC = execute_query(query_GetCodeC)
             CodeC = CodeC[0][0]
 
-            # trouver code de l'aliment dans notre BD
-            # query_GetCodeA = f"""
-            #     select CodeA
-            #     from ALIMENTS
-            #     where NOMA = {allergie}
-            # """
-            #
-            # CodeA = execute_query(query_GetCodeA)
-            #
-            # # faire l'insertion d'allergie
-            # query_allergie = f"""
-            #     insert into ALLERGIES(CodeC, CODEA)
-            #     value ({CodeC}, {CodeA})
-            # """
-            #
-            # execute_insert(query_allergie)
-
             # Cherche le code de le symptome
             query_CodeS = f"""
                 select CodeS
@@ -194,6 +160,7 @@ def inscription():
             CodeS = execute_query(query_CodeS)
             CodeS = CodeS[0][0]
 
+            # Faire l'insertion de la table d'AVOIR
             query_Avoir = f"""
                             insert into AVOIR(CodeC, CodeS)
                             values ({CodeC}, {CodeS})
@@ -242,6 +209,7 @@ def connecter():
 
             pseudo = execute_query(query_pseudo)
             session['pseudo'] = pseudo[0][0]
+            session['email'] = email
             return redirect(url_for('page_acceuil'))
         elif res == 0:
             error = "Nom d'utilisateur ou mot de passe incorrect"
@@ -261,13 +229,10 @@ def check_user_credentials(email, password):
             """
 
     user_data = execute_query(query)
-    # print(user_data)
 
     if user_data:
         email, stored_password, stored_salt = user_data[0][0], user_data[0][1], user_data[0][2]
-        # print(email)
-        # print(stored_password)
-        # print(stored_salt)
+
         # 使用存储的salt对提供的密码进行哈希
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), stored_salt.encode('utf-8'))
 
@@ -286,29 +251,52 @@ def check_user_credentials(email, password):
 @app.route('/confirmation', methods=['GET', 'POST'])
 def page_confirmation():
     if request.method == 'POST':
+
         # Recuperer de l'info d'utlisateur de la session
-        # if 'intolerance' in session:
-        #     intolerance = session['intolerance']
-        # if 'allergie' in session:
-        #     allergie = session['allergie']
-        # if 'traitement_maladie' in session:
-        #     traitement_maladie = session['traitement_maladie']
+        if 'symptome' in session:
+            symptome = session['symptome']
 
         # -------------------------------------- Interroger sur la base ------------------------------------------------
         # Chercher le type de recette et le type d'aliment sur la base de données
-        # On va trouver la recette par rapport a aliments sante
-        query_recette = '''
-            
-        '''
+        # On va trouver la recette par rapport à aliments sante
 
-        # 问题！
-        # 可能有多个结果，如何返回？
+        query_MinerauxSoulager = f'''
+                    select MINERAUX.CODEM, MINERAUX.NOMM
+                    from SOULAGER, MINERAUX, SYMPTOMES
+                    where SOULAGER.CODEM = MINERAUX.CODEM
+                    and SYMPTOMES.CODES = SOULAGER.CODES
+                    and NomS = '{symptome}'
+                '''
 
-        res_query_recette = execute_query(query_recette)
+        liste_CodeM = execute_query(query_MinerauxSoulager)
 
-        # return redirect(url_for('recette', recette=res_query_recette))
+        liste_Besoin_Mineraux = []
+        liste_Aliment_recommandation = []
+
+        for i in liste_CodeM:
+            liste_Besoin_Mineraux.append(i[1])  # Ajouter les minéraux requis à la liste
+            i = i[0]  # le code de Mineral
+
+            query_trouverAlimentRecommande = f"""
+                SELECT ALIMENTS.CodeA, NOMA, QTEM
+                FROM MINERAUX, CONTENIR, ALIMENTS
+                WHERE MINERAUX.CODEM = CONTENIR.CODEM
+                AND CONTENIR.CODEA = ALIMENTS.CODEA
+                AND MINERAUX.CODEM = {i}
+                ORDER BY QTEM DESC
+            """
+
+            resultat1 = execute_query(query_trouverAlimentRecommande)
+
+            liste_Aliment_recommandation.append(resultat1[0][1])
+
+        return render_template('Page_personnalisée.html',
+                               liste=liste_Aliment_recommandation,
+                               liste2=liste_Besoin_Mineraux,
+                               symptome=symptome)
 
     return render_template("page_confirmation.html")
+
 
 @app.route('/aliment_cliquer/<nom>')
 def aliment_cliquer(nom):
@@ -321,12 +309,60 @@ def aliment_cliquer(nom):
 
     return render_template("aliment_cliquer.html", nom=nom)
 
+
 @app.route('/logout')
 def logout():
     session.pop('email', None)
     session.pop('pseudo', None)
     return redirect(url_for('page_acceuil'))
 
-# run-------------------------------------------------------------------------------------------------------------------
+
+@app.route('/monCompte')
+def monCompte():
+    if email in session['email']:
+        email = session['email']
+
+    query_infoCLi = f"""
+           select CODEC, PSEUDO, SEXE, DATEANNIVERSAIEC, EMAILC
+           from CLIENT
+           where EMAILC = '{email}'
+       """
+
+    infoCli = execute_query(query_infoCLi)
+    infoCli = infoCli[0]
+
+    infoCLI_dict = {
+        "CodeCli": infoCli[0],
+        "Pseudo": infoCli[1],
+        "gendre": infoCli[2],
+        "DtNaissance": infoCli[3].strftime('%d-%m-%Y'),  # 格式化日期
+        "email": infoCli[4],
+    }
+
+    if request.method == 'POST':
+        if request.form["nouveau_pseudo"] != '':
+            nouveau_pseudo = request.form['nouveau_pseudo']
+            #mise à jour du pseudo dans la base de données
+            #alter/insert query remplacer les données dans la base de données
+            session['pseudo'] = nouveau_pseudo
+        elif request.form['nouveau_mail'] != '':
+            nouveau_mail = request.form['nouveau_mail']
+            session['email'] = nouveau_mail
+            #mise à jour du mail dans la base de données
+            #alter/insert query remplacer les données dans la base de données
+        elif request.form['nouveau_MDP'] != '':
+            nouveau_mdp = request.form['nouveau_MDP']
+            session['motdepass'] = nouveau_mdp
+            #mise à jour du mot de passe dans la base de données
+            #alter/insert query remplacer les données dans la base de données
+        
+        return redirect(url_for('/confirmation'))
+
+    return render_template('Page_MonCompte.html', info=infoCLI_dict)
+
+    
+    
+
+#  run -----------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
     app.run(debug=True)

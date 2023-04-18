@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+<!-- Block title-->
+{% block title %}HEALTH ME! Votre Page {% endblock %}
+
+{% block style_inline %}
+<style>
+    .section-header {
+        text-align: center;
+        padding: 20px 0;
+    }
+    /*.section-header h2 {*/
+    /*    font-size: 24px;*/
+    /*    color: #333;*/
+    /*}*/
+    .recommendation-table {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 16px;
+    }
+    .recommendation-table td {
+        padding: 10px 20px;
+    }
+    .recommendation-table h6 {
+        font-weight: bold;
+        margin: 0;
+    }
+    .suggested-food {
+        text-align: center;
+        font-size: 18px;
+        margin: 20px 0;
+    }
+</style>
+{% endblock %}
+
+<!-- Block contenu_title-->
+{% block body_title %}
+<div class="section-header">
+    <h2>En fonction de vos symptômes, nous pouvons vous recommander les aliments suivants</h2>
+</div>
+<div>
+    <table class="recommendation-table">
+        <tr>
+            <td>
+                <h6>Votre symptôme est</h6>
+            </td>
+            <td>
+                {{symptome}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6>Vous avez besoin</h6>
+            </td>
+            <td>
+                {% for i in liste2 %}
+                {{ i }},
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+    <div class="suggested-food">
+        <h5>Nous vous suggérons donc de consommer l'aliment comme :</h5>
+        {% for j in liste %}
+        <span>{{ j }}</span>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
