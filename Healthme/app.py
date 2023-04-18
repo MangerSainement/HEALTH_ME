@@ -329,7 +329,7 @@ def monCompte():
     infoCLI_dict = {
         "CodeCli": infoCli[0],
         "Pseudo": infoCli[1],
-        "gendre": infoCli[2],
+        "genre": infoCli[2],
         "DtNaissance": infoCli[3].strftime('%d-%m-%Y'),  # 格式化日期
         "email": infoCli[4],
     }
@@ -340,11 +340,6 @@ def monCompte():
             #mise à jour du pseudo dans la base de données
             #alter/insert query remplacer les données dans la base de données
             session['pseudo'] = nouveau_pseudo
-        elif request.form['nouveau_mail'] != '':
-            nouveau_mail = request.form['nouveau_mail']
-            session['email'] = nouveau_mail
-            #mise à jour du mail dans la base de données
-            #alter/insert query remplacer les données dans la base de données
         elif request.form['nouveau_MDP'] != '':
             nouveau_mdp = request.form['nouveau_MDP']
             session['motdepass'] = nouveau_mdp
