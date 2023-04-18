@@ -63,6 +63,11 @@ def resultat():
     return render_template("resultat.html")
 
 
+@app.route("/aliment&recette")
+def cliquer_symptome():
+    return render_template("symptome_cliquer.html")
+
+
 @app.route('/Inscription', methods=["POST", "GET"])
 def inscription():
     # recuperer des info de utlisateur
@@ -360,8 +365,24 @@ def monCompte():
             "email": infoCli[4],
         }
 
+    if request.method == 'POST':
+        if request.form["nouveau_pseudo"] != '':
+            nouveau_pseudo = request.form['nouveau_pseudo']
+            #mise à jour du pseudo dans la base de données
+            #alter/insert query remplacer les données dans la base de données
+            session['pseudo'] = nouveau_pseudo
+        elif request.form['nouveau_MDP'] != '':
+            nouveau_mdp = request.form['nouveau_MDP']
+            session['motdepass'] = nouveau_mdp
+            #mise à jour du mot de passe dans la base de données
+            #alter/insert query remplacer les données dans la base de données
+        
+        return redirect(url_for('/confirmation'))
+
     return render_template('Page_MonCompte.html', info=infoCLI_dict)
 
+    
+    
 
 #  run -----------------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
